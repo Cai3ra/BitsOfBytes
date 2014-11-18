@@ -1,0 +1,159 @@
+﻿@using Recaptcha
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Index</h2>
+
+<div class="main"> 
+    <div class="save">
+        <label>Gravar valor na sess&atildeo</label> <br />
+        <input type="text" name="session_value" value="" /> <br />
+        <button onclick="javascript:sessionManagerTest.setSession()">Gravar sessão</button> 
+    </div>  
+    <br />
+    <br />
+    <div class="load">
+        <label>Recuperar valor da sessão</label> <br />
+        <label>Insira um numero de requisições para testes:</label> <br />
+        <input type="text" name="loop-tests" value="" /> <br />
+        <button onclick="javascript:sessionManagerTest.getSession()">Recuperar sessão</button> 
+        <div class="value-container">
+        </div>
+    </div>  
+    <hr />
+    <div>
+        <label>Criar e recuperar imagem na sess&atildeo</label> <br />
+        <button onclick="javascript:sessionManagerTest.getRandomImage()">Gravar sessão</button> 
+        <div class="value-image-container">
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+        <label>Testar imagem da sessão</label> <br />
+        <label>Insira um numero de requisições para testes:</label> <br />
+        <input type="text" name="loop-image-tests" value="" /> <br />
+        <label>Insira o valor da imagem para testes:</label> <br />
+        <input type="text" name="image-tests" value="" /> <br />
+        <button onclick="javascript:sessionManagerTest.testRandomSession()">Testar sessão</button> 
+        <div class="value-test-container">
+        </div>
+    </div>
+    <br />
+    <br />
+    <hr />
+    <div class="editor-label">Are you a human?</div>
+    <div class="editor-field">
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+        {
+            @Html.Raw(Html.GenerateCaptcha("captcha", "clean"))
+            @Html.ValidationMessage("captcha")
+            <input type="submit" name="save" value="Validate" />
+        }
+       
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        var sessionManagerTest = {
+            setSession: function () {
+                var v = $("input[name=session_value]").val();
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("SaveSession", "Home")',
+                    cache: false,
+                    data: {
+                        valueToPersist: v
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    },
+                    dataType: "json"
+                });
+            },
+            getSession: function () {
+                var loops = $('input[name=loop-tests]').val();
+                var intLoops = parseInt(loops);
+                var divContainer = $('.value-container');
+                divContainer.empty();
+
+                var syncronizedLoop = 1;
+                for (var i = 0; i < intLoops; i++) {
+                    $.ajax({
+                        type: "GET",
+                        url: '@Url.Action("GetSession", "Home")',
+                        cache: false,
+                        success: function (res) {
+
+                            if (res.status) {
+                                divContainer.append('<label> success: ' + syncronizedLoop.toString() + ': ' + res.info + '</label><br/>');
+                            } else {
+                                divContainer.append('<label> erro: ' + syncronizedLoop.toString() + ': ' + res.info + '</label><br/>');
+                            }
+
+                            syncronizedLoop++;
+                        },
+                        dataType: "json"
+                    });
+                }
+            },
+            getRandomImage: function () {
+                var divContainer = $('.value-image-container');
+                divContainer.empty();
+
+                var syncronizedLoop = 1;
+                $.ajax({
+                    type: "GET",
+                    url: '@Url.Action("GetRandomImage", "Home", new { type = "json" })',
+                    cache: false,
+                    success: function (res) {
+
+                        if (res.status) {
+                            divContainer.append("<img src='data:image/png;base64, " + res.image + "' style='width: 100px; height: 50px;'>");
+                        } else {
+                            divContainer.append('<label> erro: ' + i + ': ' + res.info + '</label><br/>');
+                        }
+                    },
+                    dataType: "json"
+                });
+            },
+            testRandomSession: function () {
+                var loops = $('input[name=loop-image-tests]').val();
+                var imageTest = $('input[name=image-tests]').val();
+                var intLoops = parseInt(loops);
+
+                var divContainer = $('.value-test-container');
+                divContainer.empty();
+
+                var syncronizedLoop = 1;
+                for (var i = 0; i < intLoops; i++) {
+                    $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("TestRandomImage", "Home")',
+                        cache: false,
+                        data: {
+                            valueToTest: imageTest
+                        },
+                        success: function (res) {
+
+                            if (res.status) {
+                                divContainer.append('<label> success: ' + syncronizedLoop.toString() + ': ' + res.info + '</label><br/>');
+                            } else {
+                                divContainer.append('<label> erro: ' + syncronizedLoop.toString() + ': ' + res.info + '</label><br/>');
+                            }
+                            syncronizedLoop++;
+
+                        },
+                        dataType: "json"
+                    });
+                }
+            }
+        };
+
+    </script>
+}

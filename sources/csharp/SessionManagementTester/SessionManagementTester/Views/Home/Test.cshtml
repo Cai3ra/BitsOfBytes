@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main"> 
+    
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var divContainer = $('.main');
+        
+            $.ajax({
+                type: "GET",
+                url: '@Url.Action("GetRandomImage", "Home", new { type = "json" })',
+                cache: false,
+                success: function (res) {
+                    divContainer.append("<img src='data:image/png;base64, " + res.image + "' style='width: 100px; height: 50px;'>");
+                    divContainer.append("<label>"+ res.value +"</label>");
+                },
+                dataType: "json"
+            });
+        });
+    </script>
+}

@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>Index</h2>
+
+<div class="main"> 
+    <div class="save">
+        <label>Gravar valor na sess&atildeo</label> <br />
+        <input type="text" name="session_value" value="" /> <br />
+        <button onclick="javascript:sessionManagerTest.setSession()">Gravar sessão</button> 
+    </div>  
+    <br />
+    <br />
+    <div class="load">
+        <label>Recuperar valor da sessão</label> <br />
+        <label>Insira um numero de requisições para testes:</label> <br />
+        <input type="text" name="loop-tests" value="" /> <br />
+        <button onclick="javascript:sessionManagerTest.getSession()">Recuperar sessão</button> 
+        <div class="value-container">
+        </div>
+    </div>  
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        var sessionManagerTest = {
+            setSession: function () {
+                var v = $("input[name=session_value]").val();
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("SaveSession", "Home")',
+                    data: {
+                        valueToPersist: v
+                    },
+                    success: function (res) {
+                        console.log(res);
+                    },
+                    dataType: "json"
+                });
+            },
+            getSession: function () {
+                var loops = $('input[name=loop-tests]').val();
+                var intLoops = parseInt(loops);
+                var divContainer = $('.value-container');
+                divContainer.empty();
+
+                for (var i = 0; i < intLoops; i++) {
+                    $.ajax({
+                        type: "GET",
+                        url: '@Url.Action("GetSession", "Home")',
+                        success: function (res) {
+
+                            if (res.status) {
+                                divContainer.append('<label>' + res.info + '</label><br/>');
+                            }
+                        },
+                        dataType: "json"
+                    });
+                }
+            }
+        };
+
+    </script>
+}

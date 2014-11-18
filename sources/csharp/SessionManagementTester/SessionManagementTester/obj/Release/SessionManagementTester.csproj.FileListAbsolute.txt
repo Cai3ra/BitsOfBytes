@@ -1,0 +1,72 @@
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\SessionManagementTester.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\SessionManagementTester.pdb
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\Antlr3.Runtime.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\EntityFramework.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\Microsoft.Web.Infrastructure.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\Newtonsoft.Json.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.Formatting.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.WebRequest.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Http.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Http.WebHost.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Mvc.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Optimization.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Providers.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Razor.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.Deployment.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.Razor.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\WebGrease.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\EntityFramework.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\Newtonsoft.Json.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.Formatting.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.WebRequest.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Http.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Http.WebHost.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Mvc.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.Razor.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.Deployment.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.Razor.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\obj\Release\SessionManagementTester.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\SessionManagementTester\SessionManagementTester\obj\Release\SessionManagementTester.pdb
+C:\Users\bertinl\Documents\Visual Studio 2010\Projects\SessionManagementTester\SessionManagementTester\obj\Release\SessionManagementTester.csprojResolveAssemblyReference.cache
+C:\Users\bertinl\Documents\Visual Studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\Recaptcha.dll
+C:\Users\bertinl\Documents\Visual Studio 2010\Projects\SessionManagementTester\SessionManagementTester\bin\Recaptcha.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\SessionManagementTester.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\SessionManagementTester.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\Antlr3.Runtime.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\EntityFramework.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\Microsoft.Web.Infrastructure.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\Newtonsoft.Json.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\Recaptcha.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.Formatting.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.WebRequest.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Http.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Http.WebHost.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Mvc.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Optimization.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Providers.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Razor.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.Deployment.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.Razor.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\WebGrease.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\Recaptcha.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\EntityFramework.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\Newtonsoft.Json.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.Formatting.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Net.Http.WebRequest.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Http.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Http.WebHost.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Mvc.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.Razor.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.Deployment.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\bin\System.Web.WebPages.Razor.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\obj\Release\SessionManagementTester.csprojResolveAssemblyReference.cache
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\obj\Release\SessionManagementTester.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\NAO_VERSIONADO\C#\VS2010\SessionManagementTester\SessionManagementTester\obj\Release\SessionManagementTester.pdb
