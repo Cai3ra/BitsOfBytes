@@ -163,7 +163,7 @@
 			Response.Write("<br  />")
 			
 						
-			'oXMLHTTP.Open "GET", "http://subdomain.portalcvf.com/Service/Uf?format=json&token=" & timeStampLhun, False
+			'oXMLHTTP.Open "GET", "URL to send token" & timeStampLhun, False
 			'oXMLHTTP.Send
 			
 			'If oXMLHTTP.Status = 200 Then
