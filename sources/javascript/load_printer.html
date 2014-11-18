@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<input type="button" onclick="javascript:start();" value="click"/>
+		</div>
+	</body>
+	<script type="text/javascript" src="printer.js">
+	</script>
+	<script type="text/javascript">
+		function start(){
+			var p1 = new printer().constructor('A');
+			var p2 = new printer().constructor('B');
+			
+			p1.setRepeat(1000);
+			p2.setRepeat(1000);
+			
+			setTimeout(function(p1){
+				p1.print();
+			});
+			
+			setTimeout(function(p2){
+				p2.print();
+			});
+		}
+		start();
+	</script>
+</html>

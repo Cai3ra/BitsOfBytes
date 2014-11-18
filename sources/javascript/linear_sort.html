@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function sort(idx, arr){
+			document.write((++globalIndex).toString()+ ") " + vector.join(" ")+" index: "+ idx.toString() +"<br />" );
+			var next = idx+1;
+			
+			if(arr != null && arr.length && next < arr.length){
+				if(arr[idx] > arr[next]){			
+				
+					arr[idx] ^= arr[next];
+					arr[next] ^= arr[idx];
+					arr[idx] ^= arr[next];
+					
+					idx--;
+					
+					if(idx >= 0){
+						sort(idx, arr);
+					}
+				}
+				sort(next, arr);
+			}
+		}
+		
+		var globalIndex = 0;
+		var vector = [1000, 79, 10,43, 100,28,67,98, 85];
+		document.write("INICIO:" + vector.join(" ")+"<br />");
+		
+		sort(0, vector);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

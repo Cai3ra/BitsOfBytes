@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Snake</title>
+		<style>
+			.row  {
+				display: table-row;
+			}
+
+			.cell {
+				display: table-cell;
+				border: 1px solid white;
+				width: 10px;
+				height: 10px;
+			}
+			
+			.display {
+				outline: 1px solid black;
+				width: 885px;
+				height: 595px;
+			}
+			
+			.snake {
+				position: absolute;
+				border: 1px solid black;
+				background-color: black;
+				width: 10px;
+				height: 10px;
+			}
+			
+			.fruit {
+				position: absolute;
+				border: 1px solid black;
+				background-color: black;
+				width: 10px;
+				height: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="game" class="display">
+		</div>
+		
+	<script type="text/javascript">	
+		
+		function chooseSnakeStart(size){
+			maxWidth = size * 1.5;
+			maxHeight = size;
+			
+			var firstIndex = Math.floor(Math.random() * (maxHeight + 1)) + 1;
+			var secondIndex = Math.floor(Math.random() * (maxWidth + 1)) + 1;
+			
+			for(var i = 0; i < this.snake.length; i++){
+				this.snake[i].style.top = (firstIndex * 10).toString() + 'px';
+				this.snake[i].style.left = (secondIndex * 10).toString() + 'px';
+				
+				secondIndex--;
+			}	
+		}
+				
+		function pressedKey(e){
+			document.onkeydown = pressedKey;
+			//console.log(e.keyCode);
+			
+			if(e.keyCode === 37 && movement !== 'RIGHT'){
+				movementTemp = 'LEFT';
+			}
+			else if(e.keyCode === 38  && movement !== 'DOWN'){
+				movementTemp = 'UP';
+			}
+			else if(e.keyCode === 39 && movement !== 'LEFT'){
+				movementTemp = 'RIGHT';
+			}
+			else if(e.keyCode === 40 && movement !== 'UP'){
+				movementTemp = 'DOWN';
+			}
+		}
+		
+		function getIndex(object, type){
+				if(object === 'snake'){					
+					if(type === 'row')
+						return parseInt((this.snake[0].style.top).replace('px', ''));
+					else if(type === 'cell')
+						return parseInt((this.snake[0].style.left).replace('px', ''));
+				} 
+				else if(object === 'gameboard'){
+					if(type === 'row')
+						return this.gameBoard.offsetHeight;
+					else if(type === 'cell')
+						return this.gameBoard.offsetWidth;
+				}
+				
+				return 0;
+		}
+		
+		function runSnake(){
+			if(this.movementTemp !== null){
+				
+				movement = movementTemp;	
+				var row = getIndex('snake', 'row');
+				var cell = getIndex('snake', 'cell');
+				
+				if(this.movement === 'UP'){
+					row -= 10;
+				}
+				else if(this.movement === 'DOWN'){
+					row += 10;
+				}
+				else if(this.movement === 'LEFT'){
+					cell -= 10;
+				}
+				else if(this.movement === 'RIGHT'){
+					cell += 10;
+				}
+				
+				for(var i = this.snake.length -1; i > 0; i--){
+					this.snake[i].style.top = this.snake[i-1].style.top;
+					this.snake[i].style.left =  this.snake[i-1].style.left;
+					this.snake[i].className = 'snake';
+				}
+
+				this.snake[0].style.top = row.toString() + 'px';
+				this.snake[0].style.left = cell.toString() + 'px';
+				this.snake[0].className = 'snake';
+			}
+		}
+		
+		function gameLoop(){
+			if(collisionTest()){
+				return;
+			}
+			
+			runSnake();
+			eatFruit();
+			setTimeout(gameLoop, this.mseconds);
+		}
+		
+		function addSnakePart(){
+		
+			var lastElement = snake.pop();
+			
+			if(typeof lastElement !== 'undefined' && lastElement != null){
+				var left = lastElement.style.left;
+				var top = lastElement.style.top;
+				snake.push(lastElement);
+			}
+			
+			for(var i = 0; i < 3; i++){
+			
+				var el = document.createElement('div');
+				el.setAttribute('class', 'cell');
+				el.style.top = top;
+				el.style.left = left;
+				snake.push(el);
+					
+				gameBoard.appendChild(el);
+			}
+		}
+		
+		function initialMovement(){
+			return 'UP';
+		}
+		
+		function addFruit(size){
+			maxWidth = size * 1.5;
+			maxHeight = size;
+		
+			var firstIndex = Math.floor(Math.random() * (maxHeight + 1)) + 1;
+			var secondIndex = Math.floor(Math.random() * (maxWidth + 1)) + 1;
+			
+			var snakeElement = document.createElement('div');
+			snakeElement.setAttribute('class', 'fruit');
+			
+			snakeElement.style.top = (firstIndex * 10).toString() + 'px';
+			snakeElement.style.left = (secondIndex * 10).toString() + 'px';
+				
+			gameBoard.appendChild(snakeElement);
+		}
+		
+		function collisionTest(){
+			var snakeRow = getIndex('snake', 'row');
+			var snakeCell = getIndex('snake', 'cell');	
+			
+			var gameBoardRow = getIndex('gameboard', 'row');
+			var gameBoardCell = getIndex('gameboard', 'cell');
+			
+			var hasCollision = snakeRow <= 0 
+											|| snakeCell <= 0 
+											|| snakeRow >= gameBoardRow 
+											|| snakeCell >= gameBoardCell;
+
+			if(hasCollision === false){
+				for(var i=2; i < this.snake.length; i++){
+					if(this.snake[i].style.top == snakeRow.toString()+'px' 
+						&& this.snake[i].style.left ==snakeCell.toString()+'px' ){
+							hasCollision = true;
+							break;
+						}
+				}
+			}
+			
+			return hasCollision;
+		}
+		
+		function eatFruit(){
+			var fruit = document.getElementsByClassName('fruit');
+			
+			if(fruit != null 
+				&& this.snake != null
+				&& fruit.length > 0
+				&& this.snake.length > 0){
+				
+				if(this.snake[0].style.top == fruit[0].style.top 
+					&& this.snake[0].style.left == fruit[0].style.left){
+					gameBoard.removeChild(fruit[0]);
+					addSnakePart();
+					
+					addFruit(this.globalSize);
+					eatCount++;
+					
+					if(eatCount >= eatLimit){
+						eatCount = 0;
+						
+						if(this.mseconds > 0 && (this.mseconds - 10) > 0){
+							this.mseconds -= 5;
+						} 
+						else {
+							this.mseconds = 0;
+						}
+					}
+				}
+			}
+		}
+		
+		function main(){
+			addSnakePart();
+			chooseSnakeStart(this.globalSize);
+			
+			this.mseconds = 100;
+			movementTemp = initialMovement();
+			gameLoop(mseconds);
+			addFruit(this.globalSize);
+		}
+		
+		var globalSize = 50;
+		var gameBoard = document.getElementById('game');
+		var snake = new Array();
+		var movement = null;
+		var movementTemp = null;
+		var eatCount = 0;
+		var mseconds = 100;
+		var eatLimit = 5;
+		
+		document.onkeydown = pressedKey;
+		
+		main();
+	</script>
+	</body>
+</html>

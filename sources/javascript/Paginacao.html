@@ -1,0 +1,109 @@
+<html>
+	<head></head>
+	<body>
+		<div name="filter">
+			<label>Quantidade total de itens:&nbsp;</label>
+			<input type="text" value="" name="total-itens"/>
+			
+			<br/>
+
+			<label>Quantidade de itens por pagina:&nbsp;</label>
+			<input type="text" value="" name="itens-por-pagina"/>
+			
+			<br/>
+			
+			<label>Pagina:&nbsp;</label>
+			<input type="text" value="" name="page"/>
+			
+			<br/>
+			
+			<label>Paginas ao redor:&nbsp;</label>
+			<input type="text" value="" name="itens-around"/>
+			
+			<input type="button" value="calc" onclick="javascript:calcPages();" />
+		</div>
+		
+		<div name="pagination">
+			<label>Paginação</label>
+			<input type="text" value="?,?,?,?,?" name="input-pagination" />
+		</div>
+		
+		<script type="text/javascript">
+			function calcPages(){
+				var qtdeTotal = $('input[name=total-itens]');
+				var itensPorPagina = $('input[name=itens-por-pagina]');
+				var paginaAtual = $('input[name=page]');
+				var paginasAoRedor = $('input[name=itens-around]');
+				var valorPaginacao = $('input[name=input-pagination]');
+				
+				if( typeof qtdeTotal 			!== 'undefined' 
+					&& typeof paginaAtual 		!== 'undefined'
+					&& typeof paginasAoRedor 	!== 'undefined'
+					&& typeof itensPorPagina    !== 'undefined'){
+					
+					var parsedTotal = parseInt(qtdeTotal.val());
+					var parsedAtual = parseInt(paginaAtual.val());
+					var parsedAoRedor = parseInt(paginasAoRedor.val());
+					var parsedItensPorPagina = parseInt(itensPorPagina.val());
+					
+					var paginacaoValor = paginacao(
+						parsedTotal, 
+						parsedItensPorPagina,
+						parsedAtual, 
+						parsedAoRedor
+					);
+					
+					valorPaginacao.val(paginacaoValor.join(','));
+					console.log(paginacaoValor);
+				}
+			}
+			
+			function paginacao(qtdeTotal, itensPorPagina, paginaAtual, paginasAoRedor){
+				if(typeof qtdeTotal 			=== 'number'
+				   && typeof itensPorPagina     === 'number'
+				   && typeof paginaAtual 		=== 'number'
+				   && typeof paginasAoRedor 	=== 'number'){
+					
+					var arrPaginacao = new Array(0);
+					var maxPaginas = Math.ceil(qtdeTotal / itensPorPagina);
+					var startIndex = 0;
+					var endIndex = 0;
+					var index = 0;
+					
+					if(maxPaginas > (paginasAoRedor * 2 + 1)){
+						if(paginaAtual > (paginasAoRedor + 1) 
+							&& paginaAtual < (maxPaginas - paginasAoRedor)){
+							
+							var middle = paginaAtual;
+							startIndex = middle - paginasAoRedor - 1;
+							endIndex   = middle + paginasAoRedor;
+						} 
+						else {
+							if(paginaAtual <= (paginasAoRedor + 1)){
+								startIndex = 0;
+								endIndex   = paginasAoRedor * 2 + 1;
+							}
+							else if(paginaAtual >= (maxPaginas - paginasAoRedor)){
+								startIndex = maxPaginas - (paginasAoRedor * 2 + 1);
+								endIndex   = maxPaginas;
+							}
+						}
+					}
+					else {
+						startIndex = 0;
+						endIndex   = maxPaginas;
+					}
+					
+					arrPaginacao = new Array(endIndex - startIndex);
+					for(var i = startIndex; i < endIndex; i++){
+						arrPaginacao[index] = i + 1;
+						index++;
+					}
+					return arrPaginacao;
+			   }
+			}
+		</script>
+		<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	</body>
+</html>
+

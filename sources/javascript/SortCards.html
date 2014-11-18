@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<script type="text/javascript">
+			function sortCards(cards){
+			
+				var middleCard = Math.floor(cards.length / 2);
+				var tempArray = new Array(54);
+				var firstCard = 0;
+				var index = 0;
+				
+				while(middleCard < cards.length){
+					tempArray[index] = cards[firstCard]; 
+					index++;
+					
+					tempArray[index] = cards[middleCard];
+					index++;
+					
+					middleCard++;
+					firstCard++;
+				}
+				
+				document.write(tempArray);
+				document.write('<br />');
+				
+				return tempArray;
+			}
+			
+			function execute(){
+				var cards = [01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,
+									  28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54];
+				
+				document.write(cards);
+				document.write('<br />');
+				
+				var index = 0;
+				var sortAgain = true;
+				var tempCards = cards.slice(0);
+				
+				while(sortAgain){
+					tempCards = sortCards(tempCards);
+					
+					for(var i =0; i<tempCards.length; i++){
+						sortAgain = false;
+						
+						if(tempCards[i] != cards[i]){
+							sortAgain = true;
+							break;
+						}
+					}
+					
+					index++;
+				}
+				
+				document.write('loops: ' + index);
+			}
+			
+			execute();
+		</script>
+	</head>
+	<body></body>
+</html>

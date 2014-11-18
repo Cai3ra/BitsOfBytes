@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title>BubbleSort</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function nonRecursiveFirstMethod(arr){
+				var loops = 0;
+				var k = arr.length - 1;
+				
+				document.write('before loops: ' + arr);
+				document.write('<br />');
+				
+				for(var i =0; i < arr.length; i++){
+					var j = 0;
+					while(j <= k){
+						if(arr[j] > arr[j+1]){
+							arr[j] ^= arr[j+1];
+							arr[j+1] ^= arr[j];
+							arr[j] ^= arr[j+1];
+						}
+						j++;
+						loops++;
+					}
+					k--;
+				}
+				
+				document.write('loops 1st method: ' + loops);
+				document.write('<br />');
+				document.write(arr);
+				document.write('<br />');
+				document.write('<br />');
+				return arr;
+			}
+			
+			function nonRecursiveSecondMethod(arr){
+				var loops = 0;
+				var index = 0;
+				var endIndex = arr.length;
+				
+				document.write('before loops: ' + arr);
+				document.write('<br />');
+				
+				var hasChanges = false;
+				while(true){
+					
+					if(index < arr.length - 1
+						&& arr[index]  > arr[index +1]){
+						
+						arr[index] 		^= arr[index +1];
+						arr[index +1] 	^= arr[index];
+						arr[index] 		^= arr[index +1];
+						hasChanges = true;
+					}
+					
+					index++;
+					loops++;
+					if(index >= endIndex){
+						if(!hasChanges){
+							break;
+						}
+						else{
+							hasChanges = false;
+							endIndex --;
+							index = 0;
+						}
+					}
+				}
+				
+				document.write('loops 2st method: ' + loops);
+				document.write('<br />');
+				document.write(arr);
+				document.write('<br />');
+				document.write('<br />');
+				return arr;
+			}
+			
+			function randomArrayGenerator(limit){
+				var newArray = new Array(limit);
+				for(var i = 0; i < newArray.length; i++){
+				
+					var num = Math.floor((Math.random() * (limit  + i)) + 1) ;
+					
+					num *= (Math.floor(Math.random() * 2)) == 1 ? 1 : -1; 
+					
+					newArray[i] = num;
+				}
+				return newArray;
+			}
+			
+			function exec(){
+				var array = randomArrayGenerator(10000);
+				
+				nonRecursiveFirstMethod(array.slice(0));
+				nonRecursiveSecondMethod(array.slice(0));
+			}
+			
+			exec();
+		</script>
+	</body>
+<html>	

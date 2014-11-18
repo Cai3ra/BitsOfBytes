@@ -1,0 +1,20 @@
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\bin\Debug\UmElefante.exe
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\bin\Debug\UmElefante.pdb
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\obj\x86\Debug\UmElefante.Properties.Resources.resources
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\obj\x86\Debug\UmElefante.exe
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\obj\x86\Debug\UmElefante.pdb
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\bin\Debug\NAudio.xml
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\bin\Debug\NAudio.dll
+c:\users\bertinl\documents\visual studio 2010\Projects\UmElefante\UmElefante\bin\Debug\NAudio.WindowsMediaFormat.dll
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\obj\x86\Debug\UmElefante.exe
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\obj\x86\Debug\UmElefante.pdb
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\bin\Debug\NAudio.xml
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\bin\Debug\UmElefante.exe
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\bin\Debug\UmElefante.pdb
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\obj\x86\Debug\UmElefante.Properties.Resources.resources
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Desenvolvimento\Apps\UmElefante\UmElefante\obj\x86\Debug\GenerateResource.write.1.tlog

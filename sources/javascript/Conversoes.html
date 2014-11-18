@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Converte para Binario</title>
+		<script type="text/javascript">
+			function binaryConverter(text){
+				var binary = '';
+				var value = 0;
+				var tempBinary = '';
+				var tempDiv = 0;
+				
+				for(var i = 0; i < text.length; i++){
+						value = text.charCodeAt(i);
+					
+						tempBinary = '';
+						while(value > 0){
+							tempDiv = value % 2;
+							tempBinary = tempDiv + tempBinary.toString();
+							value = Math.floor(value / 2);
+						}
+						
+						for(var j=tempBinary.length; j < 8; j++){
+							tempBinary = '0' + tempBinary;
+						}
+						
+						binary += tempBinary + ' ';
+				}
+				
+				binary = binary.substring(0, binary.length - 1);
+				return binary;
+			}
+			
+			document.write(binaryConverter('aeiou'));
+		</script>
+	</head>
+	<body>
+			<div>
+				
+			</div>
+	</body>
+</html>
+
