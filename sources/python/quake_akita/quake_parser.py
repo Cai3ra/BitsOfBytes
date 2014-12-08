@@ -1,5 +1,6 @@
 from game_info import GameInfo
 from kill_info import KillInfo
+import json
 
 class QuakeParser: 
 	def __init__ ( self ):
