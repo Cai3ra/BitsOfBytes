@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.10.2.min.js"></script>
+</head>
+<body>
+		<button>1</button>
+		<button>2</button>
+		<button>3</button>
+		<button>4</button>
+		<button>5</button>
+		
+		<script>
+		$(function(){		
+			var anon = function(v){ 
+				return function () { 
+					alert(v); 
+				} 
+			}
+		
+			var nodes = document.getElementsByTagName('button');
+			for (var i = 0; i < nodes.length; i++) {
+				nodes[i].addEventListener(
+					'click', 
+					anon ( i )
+				);
+			}
+		});
+		</script>
+</body>
+</html>

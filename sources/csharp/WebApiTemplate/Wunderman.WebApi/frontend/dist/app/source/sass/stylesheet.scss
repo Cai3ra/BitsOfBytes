@@ -1,0 +1,32 @@
+// Compass
+@import
+    'compass',
+    'compass/reset';
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// Sprite
+// $tmp-sprite-dimensions: true;
+// $tmp-spacing: 5px;
+// @import 'tmp/*.png';
+
+// // Utils
+// @import
+//     'utils/';
+
+// // Base
+// @import
+//     'base/';
+
+// // Components
+// @import
+//     'components/';
+
+// // Modules
+// @import
+//     'modules/';
+
+// // Pages
+@import
+     'pages/home';

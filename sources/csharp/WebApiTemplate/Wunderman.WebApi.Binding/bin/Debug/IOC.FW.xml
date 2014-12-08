@@ -1,0 +1,1063 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IOC.FW</name>
+    </assembly>
+    <members>
+        <member name="T:IOC.FW.Core.Database.Repository`1">
+            <summary>
+            Classe utilizada como interface entre a aplicação e o database, é utilizada como UnitOfWork de DbContext e desabilita a criação automatica de tabelas.
+            </summary>
+            <typeparam name="TModel">Tipo que representa a classe modelo referente a uma tabela do database</typeparam>
+        </member>
+        <member name="F:IOC.FW.Core.Database.Repository`1._dbQuery">
+            <summary>
+            Objeto de IQuereyable, utilizado para incluir objetos de foreign key em querys do Entity Framework
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Database.Repository`1.#ctor(System.String)">
+            <summary>
+            Constructor padrão, iniciando o Entity Framework com uma string de conexão passada por parametro
+            </summary>
+            <param name="connectionString"></param>
+        </member>
+        <member name="M:IOC.FW.Core.Database.Repository`1.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            Método responsável por permitir que classes informem relacionamentos de base
+            </summary>
+            <param name="modelBuilder">Objeto modelador de relacionamentos do Entity</param>
+        </member>
+        <member name="P:IOC.FW.Core.Database.Repository`1.DbObject">
+            <summary>
+            Objeto de DbSet para acessar as funções de model do Entity Framework
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Abstraction.Binding.IModule">
+            <summary>
+            Abstração para implementação dos bindings.
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Binding.IModule.SetBinding(SimpleInjector.Container)">
+            <summary>
+            Configura a classe concreta que fará a implementação de uma abstração.
+            </summary>
+            <param name="container">Container ou kernel da injeção de dependência que conterá todos os bindings.</param>
+        </member>
+        <member name="T:IOC.FW.Core.Factory.SimpleInjectionModule">
+            <summary>
+            Classe responsável pelo Container Simple Injector
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Abstraction.Factory.IInjectionModule`1">
+            <summary>
+            Abstração para implementação de Containers de Injeção de Dependência
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:IOC.FW.Core.Abstraction.Factory.IInjectionModule`1.container">
+            <summary>
+            Container utilizado
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Factory.SimpleInjectionModule.#ctor">
+            <summary>
+            Constructor padrão, inicializando o container de injeção e o seu Load.
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Factory.SimpleInjectionModule.Load">
+            <summary>
+            Método utilizado para carregar os bindings do SimpleInjector
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Factory.SimpleInjectionModule.SetDefaultBindings(SimpleInjector.Container)">
+            <summary>
+            Método destinado a settar os bindings padrões
+            </summary>
+            <param name="container">Container de injeção (Simple Injector)</param>
+        </member>
+        <member name="P:IOC.FW.Core.Factory.SimpleInjectionModule.container">
+            <summary>
+            Container de injeção (Simple Injector)
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Extensions">
+            <summary>
+            Classe destinada a armazenar os Extensions Methods do Framework
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.Truncate(System.Double,System.Int32)">
+            <summary>
+            Método auxiliar para truncar decimais
+            </summary>
+            <param name="value">Tipo de objeto a extender</param>
+            <param name="decimalPlaces">Quantidade desejada de casas decimais</param>
+            <returns>Valor truncado com a quantidade de decimais fornecida</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.RemoveSpecialChars(System.String)">
+            <summary>
+            Extension method para remover caracteres especiais de uma string.
+            </summary>
+            <param name="dirtyString">string com o conteúdo a avaliar </param>
+            <returns>string limpa de caracteres especiais</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.ReplaceSpecialChars(System.String)">
+            <summary>
+            Extension method para trocar caracteres especiais em simples. (ex: á para a)
+            </summary>
+            <param name="dirtyString">string com o conteúdo a avaliar </param>
+            <returns>string limpa de caracteres especiais</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.PreparePattern(System.String,System.Char,System.String)">
+            <summary>
+            Extension method destinado a criar strings de LIKE para utilizar em LINQ com regex
+            </summary>
+            <param name="text">Texto contendo string para like</param>
+            <param name="charSplitter">Caracter separador</param>
+            <param name="likeCommand">Comando de like</param>
+            <returns>Pattern para utilizar com LINQ e regex</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.Like(System.String,System.String,System.Text.RegularExpressions.RegexOptions)">
+            <summary>
+            Extension method destinado a encontrar itens com patterns de REGEX
+            </summary>
+            <param name="text">Texto contendo string para like</param>
+            <param name="pattern">Pattern utilizado no like</param>
+            <param name="options">Opções para o REGEX</param>
+            <returns>Retorna se existe itens para a condição de REGEX</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.StripHtmlTags(System.String)">
+            <summary>
+            Remove tags HTML de uma string
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.StripHtmlAttrs(System.String)">
+            <summary>
+            Remove todos os atributos HTML das tags html
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.StripHtmlAttrs(System.String,System.String)">
+            <summary>
+            Remove atributos HTML das tags html deixando os atributos passados no array
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.HasElements``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            Extension method destinado a facilitar a validação de Lists
+            </summary>
+            <typeparam name="T">Type da lista</typeparam>
+            <param name="list">Lista a comparar</param>
+            <returns>Retorna se existem elementos</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.FisherYates``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Extension method destinado a "randomizar" listas usando o algoritmo de Fisher-Yates
+            </summary>
+            <typeparam name="T">Type da lista</typeparam>
+            <param name="list">Lista a randomizar os itens</param>
+            <returns>Lista randomizada</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.FisherYates``1(System.Collections.Generic.IList{``0},System.Int32,System.Int32)">
+            <summary>
+            Extension method destinado a "randomizar" listas usando o algoritmo de Fisher-Yates
+            </summary>
+            <typeparam name="T">Type da lista</typeparam>
+            <param name="list">Lista a randomizar os iten</param>
+            <param name="startIndex">Index inicial para randomizar</param>
+            <param name="count">Quantidade de itens à randomizar</param>
+            <returns>Lista com quantidade definida de itens randomizados</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.Shuffle``1(System.Collections.Generic.IList{``0})">
+            <summary>
+            Extension method destinado a "randomizar" listas usando o algoritmo de Fisher-Yates
+            </summary>
+            <typeparam name="T">Type da lista</typeparam>
+            <param name="list">Lista a randomizar os iten</param>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.ToQueryString``1(System.Collections.Generic.IDictionary{System.String,``0})">
+            <summary>
+            Transforma um dictionary em uma query string
+            </summary>
+            <param name="dict">Dictionary com as associações</param>
+            <returns>O dictionary convertido ou uma string vazia</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Extensions.IsImage(System.IO.Stream)">
+            <summary>
+            Extension method destinado a facilitar a validação do stream
+            </summary>
+            <param name="stream">Stream a validar</param>
+            <returns>Retorna se o stream passado é imagem</returns>
+        </member>
+        <member name="T:IOC.FW.Configuration.Injection.InjectionFactoryConfigurationElement">
+            <summary>
+            Classe de configuração do elemento injectionFactory do customSection.
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Configuration.Injection.InjectionFactoryConfigurationElement.Injection">
+            <summary>
+            Propriedade representa o elemento injection do customSection e comtém a coleção de elementos e suas propriedades.
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Configuration.Injection.InjectionElementCollection">
+            <summary>
+            Classe de implementação do elemento injection do customSection
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Configuration.Injection.InjectionElementCollection.CreateNewElement">
+            <summary>
+            Instância um elemento da coleção injection.
+            </summary>
+            <returns>Retorna a instância de um elemento da coleção injection.</returns>
+        </member>
+        <member name="M:IOC.FW.Configuration.Injection.InjectionElementCollection.GetElementKey(System.Configuration.ConfigurationElement)">
+            <summary>
+            Pega uma instância da chave de um elemento da coleção injection.
+            </summary>
+            <param name="element">Uma instância ou implementação de ConfigurationElement.</param>
+            <returns>Retorna o objecto que representa a chave do elemento do customSection.</returns>
+        </member>
+        <member name="P:IOC.FW.Configuration.Injection.InjectionElementCollection.Item(System.String)">
+            <summary>
+            Propriadade representa um elemento da coleção do injection.
+            </summary>
+            <param name="key">Chave de um elemento da coleção do injection.</param>
+            <returns>Valor de um elemento da coleção injection.</returns>
+        </member>
+        <member name="P:IOC.FW.Configuration.Injection.InjectionElementCollection.Item(System.Int32)">
+            <summary>
+            Propriadade representa um elemento da coleção injection.
+            </summary>
+            <param name="index">Índice de um elemento da coleção injection.</param>
+            <returns>Valor de um elemento da coleção injection.</returns>
+        </member>
+        <member name="T:IOC.FW.Configuration.Configurations">
+            <summary>
+            Classe de implementação do customSection.
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Configuration.Configurations.Current">
+            <summary>
+            Propriedade representa os elementos do customSection com as configurações atuais.
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Configuration.Configurations.InjectionFactory">
+            <summary>
+            Propriedade representa o elemento injectionFactory do customSection e comtém suas propriedades.
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Configuration.Configurations.Thumb">
+            <summary>
+            Propriedade representa o elemento thumb do customSection e comtém suas propriedades.
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Cripto.SHA1Util">
+            <summary>
+            Classe responsável por encriptação utilizando a técnica SHA1
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.SHA1Util.GenerateSHA1(System.String)">
+            <summary>
+            Método responsável por encriptar 
+            </summary>
+            <param name="plainTextString">Texto puro</param>
+            <returns>Texto encriptado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.SHA1Util.GenerateSHA1(System.String,System.Byte[])">
+            <summary>
+            Método responsável por encriptar 
+            </summary>
+            <param name="plainTextString">Texto puro</param>
+            <param name="salt">Array de bytes que representa chave de criptografia</param>
+            <returns>Texto encriptado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.SHA1Util.GenerateSalt(System.Int32)">
+            <summary>
+            Método responsável por criar o array de bytes utilizado para encriptação
+            </summary>
+            <param name="saltSize">Quantidade de itens no array de bytes</param>
+            <returns>Array de bytes preenchido com valores randomizados que representa chave de criptografia</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.SHA1Util.AppendByteArray(System.Byte[],System.Byte[])">
+            <summary>
+            Método responsável por unificar dois byte arrays
+            </summary>
+            <param name="byteArray1">Primeiro array</param>
+            <param name="byteArray2">Segundo array</param>
+            <returns>Array unificado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.SHA1Util.VerifyHash(System.String,System.String,System.Byte[])">
+            <summary>
+            Método responsável por verificar se uma entrada bate com um conteúdo encriptado
+            </summary>
+            <param name="input">Entrada em texto puro</param>
+            <param name="hash">Texto criptografado a fim de comparação</param>
+            <param name="salt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IOC.FW.Core.Cripto.RijdaelUtil">
+            <summary>
+            Classe responsável por encriptação utilizando a técnica Rijdael
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.RijdaelUtil.Encrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Método responsável por encriptar
+            </summary>
+            <param name="plainText">Texto puro</param>
+            <param name="Key">Chave (key)</param>
+            <param name="IV">Chave (iv)</param>
+            <returns>String com texto encriptado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.RijdaelUtil.Decrypt(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Método responsável por decriptar
+            </summary>
+            <param name="cipherText">Texto cifrado</param>
+            <param name="Key">Chave (key)</param>
+            <param name="IV">Chave (iv)</param>
+            <returns>String com texto decriptado</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Abstraction.Model.IBaseModel">
+            <summary>
+            Interface padrão para models que desejam utilizar data de inclusão, alteração e status de ativação
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Abstraction.Model.IBaseModel.Created">
+            <summary>
+            Propriedade contendo a data de criação do registro
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Abstraction.Model.IBaseModel.Updated">
+            <summary>
+            Propriedade contendo a data de atualização do registro
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Abstraction.Model.IBaseModel.Activated">
+            <summary>
+            Propriedade indicando se o registro está ativo
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Configuration.Thumb.ThumbElement">
+            <summary>
+            Classe representa o elemento da coleção thumb.
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Configuration.Thumb.ThumbElement.NotFoundPath">
+            <summary>
+            Propriedade representa o atributo notFound(imagem não encontrada) do elemento thumb.
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Enumerators">
+            <summary>
+            Classe utilizada para armazenar enumeradores
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Cripto.MD5Util">
+            <summary>
+            Classe responsável por encriptação utilizando a técnica MD5
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.MD5Util.GetHash(System.String)">
+            <summary>
+            Método responsável por encriptar e gerar o Hash
+            </summary>
+            <param name="input">Texto puro</param>
+            <returns>String contendo o hash</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.MD5Util.VerifyHash(System.String,System.String)">
+            <summary>
+            Método utilizado para validar uma entrada com o hash gerado
+            </summary>
+            <param name="input">Texto puro</param>
+            <param name="hash">Texto com hash</param>
+            <returns>Validação da comparação de hash com string</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Factory.InstanceFactory">
+            <summary>
+            Classe responsável pela construção de objetos de dependência;
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Factory.InstanceFactory.GetInjection">
+            <summary>
+            Encontra o Container e o constrói
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IOC.FW.Core.Factory.InstanceFactory.GetImplementation``1">
+            <summary>
+            Retorna uma implementação de uma abstração
+            </summary>
+            <typeparam name="T">Tipo da Abstração que se deseja encontrar a implementação</typeparam>
+            <returns>Uma abstração preenchida por uma implementação</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Factory.InstanceFactory.RegisterModules(System.Action{SimpleInjector.Container})">
+            <summary>
+            Registra os módulos de dependências com suas classes concretas
+            </summary>
+            <returns>Container preenchido</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Cripto.RSAUtil">
+            <summary>
+            Classe com o propósito de facilitar a utilização de RSA
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.RSAUtil.Keys">
+            <summary>
+            Método auxiliar para obter chaves para encriptar e decriptar utilizando RSA
+            </summary>
+            <returns>Array com chaves de criptografia, index:0 = publica, index:1 = privada</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.RSAUtil.Keys(System.String,System.String)">
+            <summary>
+            Método auxiliar para obter chaves para encriptar e decriptar utilizando RSA
+            </summary>
+            <param name="publicKeyFileName">Caminho para gerar um arquivo contendo a chave publica</param>
+            <param name="privateKeyFileName">Caminho para gerar um arquivo contendo a chave privada</param>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.RSAUtil.Encrypt(System.String,System.String,System.String)">
+            <summary>
+            Método auxiliar para encriptar uma mensagem utilizando RSA
+            </summary>
+            <param name="publicKeyFileName">Caminho contendo o arquivo com a chave publica</param>
+            <param name="plainFileName">Caminho contendo o arquivo com o texto puro</param>
+            <param name="encryptedFileName">Caminho contendo o arquivo com o texto encriptado</param>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.RSAUtil.Encrypt(System.Security.Cryptography.RSAParameters,System.Byte[])">
+            <summary>
+            Método auxiliar para encriptar uma mensagem utilizando RSA
+            </summary>
+            <param name="publicKey">Parametro de RSA contendo a chave publica</param>
+            <param name="plainBytes">Bytes contendo o texto puro</param>
+            <returns>Bytes com o texto encriptado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.RSAUtil.Decrypt(System.String,System.String,System.String)">
+            <summary>
+            Método auxiliar para decriptar uma mensagem utilizando RSA
+            </summary>
+            <param name="privateKeyFileName">Caminho contendo o arquivo com a chave privada</param>
+            <param name="encryptedFileName">Caminho contendo o arquivo com o texto encriptado</param>
+            <param name="plainFileName">Caminho contendo o arquivo com o texto puro</param>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.RSAUtil.Decrypt(System.Security.Cryptography.RSAParameters,System.Byte[])">
+            <summary>
+            Método auxiliar para decriptar uma mensagem utilizando RSA
+            </summary>
+            <param name="privateKey">Parametro de RSA contendo a chave privada</param>
+            <param name="encryptedBytes">Bytes contendo o texto encriptado</param>
+            <returns>Bytes com o texto puro</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Abstraction.Model.IModelCreating">
+            <summary>
+            Interface responsável por criar integridade referencial entre entidades do EntityFramework
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Model.IModelCreating.OnCreating(System.Data.Entity.DbModelBuilder)">
+            <summary>
+            Método responsável por criar integridade referencial entre entidades do EntityFramework
+            </summary>
+            <param name="modelBuilder">Classe do EnetityFramework, utilizada para modelar referencias</param>
+        </member>
+        <member name="T:IOC.FW.Core.Cripto.DESUtil">
+            <summary>
+            Classe responsável por encriptação e decriptação utilizando a técnica DES
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.DESUtil.Keys">
+            <summary>
+            Método responsável por criar e devolver as chaves utilizadas para os processos
+            </summary>
+            <returns>Listagem de chaves (Key como index: 0 e IV como index: 1)</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.DESUtil.Encrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            Método responsável por encriptar textos
+            </summary>
+            <param name="plainText">Texto puro</param>
+            <param name="Key">Chave (key)</param>
+            <param name="IV">Chave (iv)</param>
+            <returns>Array de bytes com texto encriptado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.DESUtil.Decrypt(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            Método responsável por decriptar textos
+            </summary>
+            <param name="cipherText">Texto cifrado</param>
+            <param name="Key">Chave (key)</param>
+            <param name="IV">Chave (iv)</param>
+            <returns>String com texto decriptado</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1">
+            <summary>
+            Abstração para a implementação dos métodos padrões do framework.
+            </summary>
+            <typeparam name="TModel">Model (espelho da entidade da base de dados) para tipagem da abstração.</typeparam>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.Model">
+            <summary>
+            Implementação de método de IBaseDAO destinado a retornar uma implementação de model
+            </summary>
+            <returns>Uma nova instância de TModel</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.List">
+            <summary>
+            Implementação de método de IBaseDAO destinado a retornar uma implementação de lista de model
+            </summary>
+            <returns>Uma nova instância de lista de TModel</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.SelectAll(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar todos os registros de uma tabela vinculada a uma Model.
+            Há possibilidade de incluir objetos referenciais a chaves estrangeiras
+            </summary>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Implementação de IList com os registros encontrados.</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.Select(System.Func{`0,System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar todos os registros de uma tabela vinculada a uma model. 
+            </summary>
+            <param name="where">Delegate contendo parâmetros para composição de WHERE</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Implementação de IList com os registros encontrados.</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.SelectSingle(System.Func{`0,System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar um unico registro de uma tabela vinculada a uma model. 
+            </summary>
+            <param name="where">Delegate contendo parâmetros para composição de WHERE</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Objeto de classe modelo preenchido com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.Insert(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.BulkInsert(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção muitos de registros. Em uma única transaction.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.Update(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a atualizar na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.BulkUpdate(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de muitos registros. Em uma única transaction.
+            </summary>
+            <param name="items">Coleção de registros a atualizar na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.Delete(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a excluir (logicamente ou fisicamente) uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a deletar da base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.Exec(System.Func{System.Data.Entity.DbSet{`0},`0})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Objeto de classe modelo preenchido com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.Exec``1(System.Func{System.Data.Entity.DbSet{``0},``0})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <typeparam name="TGenericModel">Tipo de Model de entrada para preencher DbSet</typeparam>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Model de retorno preenchida com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.Business.IBaseBusiness`1.Exec``2(System.Func{System.Data.Entity.DbSet{``0},``1})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <typeparam name="TGenericModel">Tipo de Model de entrada para preencher DbSet</typeparam>
+            <typeparam name="TGenericModeOut">Tipo de Model de saida</typeparam>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Model de retorno preenchida com registro encontrado</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Base.BaseRepository`1">
+            <summary>
+            Classe base para a utilização de Repositorios padronizadas, utilizando Entity Framework como Reposiorio Base...
+            </summary>
+            <typeparam name="TModel">Tipo que representa a classe modelo referente a uma tabela do database</typeparam>
+        </member>
+        <member name="T:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1">
+            <summary>
+            Interface responsável por padronizar DAOs de projetos
+            </summary>
+            <typeparam name="TModel">Tipo da classe modelo</typeparam>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.SelectAll(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar todos os registros de uma tabela vinculada a uma Model.
+            Há possibilidade de incluir objetos referenciais a chaves estrangeiras
+            </summary>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Implementação de IList com os registros encontrados.</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.Select(System.Func{`0,System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar todos os registros de uma tabela vinculada a uma model. 
+            </summary>
+            <param name="where">Delegate contendo parâmetros para composição de WHERE</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Implementação de IList com os registros encontrados.</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.SelectSingle(System.Func{`0,System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar um unico registro de uma tabela vinculada a uma model. 
+            </summary>
+            <param name="where">Delegate contendo parâmetros para composição de WHERE</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Objeto de classe modelo preenchido com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.Insert(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.BulkInsert(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção muitos de registros. Em uma única transaction.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.Update(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a atualizar na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.BulkUpdate(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de muitos registros. Em uma única transaction.
+            </summary>
+            <param name="items">Coleção de registros a atualizar na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.Delete(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a excluir (logicamente ou fisicamente) uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a deletar da base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.ExecuteQuery(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.CommandType)">
+            <summary>
+            Implementação de método de IBaseDAO destinado a executar querys customizadas e procedures.
+            </summary>
+            <param name="sql">Query ou nome de procedure</param>
+            <param name="parameters">Dicionaário com os parâmetros e valores a incluir</param>
+            <param name="cmdType">Tipo de execução: query/procedure</param>
+            <returns>Implementação de listagem contendo os resultados obtidos</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.ExecuteScalar(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.CommandType)">
+            <summary>
+            Implementação de método de IBaseDAO destinado a executar querys customizadas e procedures.
+            </summary>
+            <param name="sql">Query ou nome de procedure</param>
+            <param name="parameters">Dicionaário com os parâmetros e valores a incluir</param>
+            <param name="cmdType">Tipo de execução: query/procedure</param>
+            <returns>Objeto com o resultado obtido</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.Exec(System.Func{System.Data.Entity.DbSet{`0},`0})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Objeto de classe modelo preenchido com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.Exec``1(System.Func{System.Data.Entity.DbSet{``0},``0})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <typeparam name="TGenericModel">Tipo de Model de entrada para preencher DbSet</typeparam>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Model de retorno preenchida com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Abstraction.DAO.IBaseDAO`1.Exec``2(System.Func{System.Data.Entity.DbSet{``0},``1})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <typeparam name="TGenericModel">Tipo de Model de entrada para preencher DbSet</typeparam>
+            <typeparam name="TGenericModeOut">Tipo de Model de saida</typeparam>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Model de retorno preenchida com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.#ctor">
+            <summary>
+            Construtor padrão, inicializa a string de conexão com o parametrizado em ConnectionStrings.config (Name: DefaultConnection)
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.SetConnection(System.String)">
+            <summary>
+            Método destinado a modificar a string de conexão usada pelo Entity Framework
+            </summary>
+            <param name="connection">String de conexão</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.IncludeReference(System.Data.Entity.DbSet{`0},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Método auxiliar destinado a incluir referências a classes com propriedades de chasves estrangeiras. 
+            </summary>
+            <param name="dbSet">Objeto de Entity Framework o qual permite acesso a uma tabela vinculada a uma Model pelo attribute "TableAttribute"</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Objeto utilizado na query já possuindo a referencia relacional de chave estrangeira</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.SelectAll(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar todos os registros de uma tabela vinculada a uma Model.
+            Há possibilidade de incluir objetos referenciais a chaves estrangeiras
+            </summary>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Implementação de IList com os registros encontrados.</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.Select(System.Func{`0,System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar todos os registros de uma tabela vinculada a uma model. 
+            </summary>
+            <param name="where">Delegate contendo parâmetros para composição de WHERE</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Implementação de IList com os registros encontrados.</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.SelectSingle(System.Func{`0,System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar um unico registro de uma tabela vinculada a uma model. 
+            </summary>
+            <param name="where">Delegate contendo parâmetros para composição de WHERE</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Objeto de classe modelo preenchido com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.Insert(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a inserir uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.BulkInsert(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção muitos de registros. Em uma única transaction.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.Update(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.BulkUpdate(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.Delete(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a excluir (logicamente ou fisicamente) uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.ExecuteQuery(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.CommandType)">
+            <summary>
+            Implementação de método de IBaseDAO destinado a executar querys customizadas e procedures.
+            </summary>
+            <param name="sql">Query ou nome de procedure</param>
+            <param name="parameters">Dicionaário com os parâmetros e valores a incluir</param>
+            <param name="cmdType">Tipo de execução: query/procedure</param>
+            <returns>Implementação de listagem contendo os resultados obtidos</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.ExecuteScalar(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.Data.CommandType)">
+            <summary>
+            Implementação de método de IBaseDAO destinado a executar querys customizadas e procedures.
+            </summary>
+            <param name="sql">Query ou nome de procedure</param>
+            <param name="parameters">Dicionaário com os parâmetros e valores a incluir</param>
+            <param name="cmdType">Tipo de execução: query/procedure</param>
+            <returns>Objeto contendo o retorno do Scalar</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.Exec(System.Func{System.Data.Entity.DbSet{`0},`0})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Objeto de classe modelo preenchido com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.Exec``1(System.Func{System.Data.Entity.DbSet{``0},``0})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <typeparam name="TGenericModel">Tipo de Model de entrada para preencher DbSet</typeparam>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Model de retorno preenchida com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseRepository`1.Exec``2(System.Func{System.Data.Entity.DbSet{``0},``1})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <typeparam name="TGenericModel">Tipo de Model de entrada para preencher DbSet</typeparam>
+            <typeparam name="TGenericModeOut">Tipo de Model de saida</typeparam>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Model de retorno preenchida com registro encontrado</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Logging.LogFactory">
+            <summary>
+            Classe responsável pela criação dos objetos que fazem o log
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Logging.LogFactory.#cctor">
+            <summary>
+            Preenche a connection string no appender de banco de dados
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Logging.LogFactory.CreateLog">
+            <summary>
+            Cria a implementação settando parâmetro logger como a classe de onde foi chamado o método CreateLog()
+            </summary>
+            <returns>retorna uma implementação de ILog</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Logging.LogFactory.CreateLog(System.Type)">
+            <summary>
+            Cria a implementação settando parâmetro logger como o tipo passado
+            </summary>
+            <returns>retorna uma implementação de ILog</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Cripto.AESUtil">
+            <summary>
+            Classe com o propósito de facilitar a utilização de AES
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.AESUtil.Keys">
+            <summary>
+            Método auxiliar para obter chaves para encriptar e decriptar utilizando AES
+            </summary>
+            <returns>Array com chaves de criptografia, index:0 = KEY, index:1 = IV</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.AESUtil.Encrypt(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="plainText"></param>
+            <param name="Key"></param>
+            <param name="IV"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IOC.FW.Core.Cripto.AESUtil.Decrypt(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="cipherText"></param>
+            <param name="Key"></param>
+            <param name="IV"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IOC.FW.Core.Database.ORM">
+            <summary>
+            Classe com o propósito de ter métodos úteis a mapeamento de objetos relacionais
+            </summary>
+        </member>
+        <member name="M:IOC.FW.Core.Database.ORM.GetProperties(System.Type)">
+            <summary>
+            Método auxiliar destinado a encontrar as propriedades 
+            de uma model que estejam decoradas com column attribute. 
+            </summary>
+            <param name="tpObject">Tipo de uma class a qual será usada para encontrar as propriedades</param>
+            <returns>Propriedades encontradas</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Database.ORM.GetModel``1(System.Data.IDataReader,IOC.FW.Core.Database.FormatProperty[])">
+            <summary>
+            Método auxiliar destinado a fazer o de-para de um DataReader para uma model.
+            </summary>
+            <typeparam name="TNewModel">Tipo de Model</typeparam>
+            <param name="reader">DataReader aberto com resultados</param>
+            <param name="properties">Array de propriedades para utilizar no de para</param>
+            <returns>List de Model com os valores do DataReader</returns>
+        </member>
+        <member name="T:IOC.FW.Core.Database.FormatProperty">
+            <summary>
+            Classe com o propósito de armazenar as informações úteis de uma Model mapeada.
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Database.FormatProperty.ColumnName">
+            <summary>
+            Propriedade para indicar o nome de coluna vinculada
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Database.FormatProperty.PropertyName">
+            <summary>
+            Propriedade para indicar o nome da propriedade
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Configuration.Injection.InjectionElement">
+            <summary>
+            Classe representa o elemento da coleção injection.
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Configuration.Injection.InjectionElement.Key">
+            <summary>
+            Propriedade representa a chave do elemento da coleção injection.
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Configuration.Injection.InjectionElement.Value">
+            <summary>
+            Propriedade representa o valor do elemento da coleção injection.
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Base.BaseJson">
+            <summary>
+            Classe base para retorno de Json tipado como dynamic
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Base.BaseJson.IdOp">
+            <summary>
+            Propriedade para indicar o Id da operação
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Base.BaseJson.Message">
+            <summary>
+            Propriedade para indicar a Mensagem de erro/sucesso
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Base.BaseJson.Success">
+            <summary>
+            Propriedade para indicar falha ou sucesso da operação
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Base.BaseJson.Data">
+            <summary>
+            Propriedade para indicar dados especificos de uma operação (serialização de tipos)
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Base.BaseJson`1">
+            <summary>
+            Classe base para retorno de Json tipado como GenericType
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Base.BaseJson`1.IdOp">
+            <summary>
+            Propriedade para indicar o Id da operação
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Base.BaseJson`1.Message">
+            <summary>
+            Propriedade para indicar a Mensagem de erro/sucesso
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Base.BaseJson`1.Success">
+            <summary>
+            Propriedade para indicar falha ou sucesso da operação
+            </summary>
+        </member>
+        <member name="P:IOC.FW.Core.Base.BaseJson`1.Data">
+            <summary>
+            Propriedade para indicar dados especificos de uma operação (serialização de tipos)
+            </summary>
+        </member>
+        <member name="T:IOC.FW.Core.Base.BaseBusiness`1">
+            <summary>
+            Classe base para a utilização de Business padronizadas, utilizando Entity Framework como Reposiorio Base...
+            </summary>
+            <typeparam name="TModel">Tipo que representa a classe modelo referente a uma tabela do database</typeparam>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.Model">
+            <summary>
+            Implementação de método de IBaseDAO destinado a retornar uma implementação de model
+            </summary>
+            <returns>Uma nova instância de TModel</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.List">
+            <summary>
+            Implementação de método de IBaseDAO destinado a retornar uma implementação de lista de model
+            </summary>
+            <returns>Uma nova instância de lista de TModel</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.#ctor(IOC.FW.Core.Abstraction.DAO.IBaseDAO{`0})">
+            <summary>
+            Constructor recebendo uma implementação de DAO
+            </summary>
+            <param name="dao">Implementação de Base DAO</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.SelectAll(System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar todos os registros de uma tabela vinculada a uma Model.
+            Há possibilidade de incluir objetos referenciais a chaves estrangeiras
+            </summary>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Implementação de IList com os registros encontrados.</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.Select(System.Func{`0,System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar todos os registros de uma tabela vinculada a uma model. 
+            </summary>
+            <param name="where">Delegate contendo parâmetros para composição de WHERE</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Implementação de IList com os registros encontrados.</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.SelectSingle(System.Func{`0,System.Boolean},System.Linq.Expressions.Expression{System.Func{`0,System.Object}}[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a encontrar um unico registro de uma tabela vinculada a uma model. 
+            </summary>
+            <param name="where">Delegate contendo parâmetros para composição de WHERE</param>
+            <param name="navigationProperties">Objetos de uma Model referentes a chaves estrangeiras no database</param>
+            <returns>Objeto de classe modelo preenchido com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.Insert(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.BulkInsert(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção muitos de registros. Em uma única transaction.
+            </summary>
+            <param name="items">Coleção de registros a inserir na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.Update(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a atualizar na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.BulkUpdate(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a atualizar uma coleção de muitos registros. Em uma única transaction.
+            </summary>
+            <param name="items">Coleção de registros a atualizar na base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.Delete(`0[])">
+            <summary>
+            Implementação de método de IBaseDAO destinado a excluir (logicamente ou fisicamente) uma coleção de registros.
+            </summary>
+            <param name="items">Coleção de registros a deletar da base</param>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.Exec(System.Func{System.Data.Entity.DbSet{`0},`0})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Objeto de classe modelo preenchido com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.Exec``1(System.Func{System.Data.Entity.DbSet{``0},``0})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <typeparam name="TGenericModel">Tipo de Model de entrada para preencher DbSet</typeparam>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Model de retorno preenchida com registro encontrado</returns>
+        </member>
+        <member name="M:IOC.FW.Core.Base.BaseBusiness`1.Exec``2(System.Func{System.Data.Entity.DbSet{``0},``1})">
+            <summary>
+            Implementação de método de IBaseDAO destinado a expor o Context de maneira segura para a DAO.
+            </summary>
+            <typeparam name="TGenericModel">Tipo de Model de entrada para preencher DbSet</typeparam>
+            <typeparam name="TGenericModeOut">Tipo de Model de saida</typeparam>
+            <param name="lambda">Delegate para expor o Context e retornar uma Model preenchida</param>
+            <returns>Model de retorno preenchida com registro encontrado</returns>
+        </member>
+    </members>
+</doc>

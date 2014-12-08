@@ -1,0 +1,16 @@
+.header{
+
+	.h{height: 58px;}
+	background: #FFF;
+	border-bottom: 1px solid #CCC;
+	margin-bottom: 25px;
+	
+	.container-fluid{
+		@extend .h;
+		> .row, .row > div{ @extend .h;}
+	}
+
+	h1{
+		margin-top: 10px;
+	}
+}

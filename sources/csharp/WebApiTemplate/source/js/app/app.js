@@ -1,0 +1,1 @@
+var novaOpcaoApp = angular.module('novaOpcaoApp',['ngRoute', 'ngResource', 'ngCookies']);

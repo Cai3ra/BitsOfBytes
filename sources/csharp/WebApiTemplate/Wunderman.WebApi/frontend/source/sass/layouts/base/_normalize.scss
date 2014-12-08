@@ -1,0 +1,41 @@
+* {
+  @include box-sizing('border-box');
+}
+
+::selection {
+  background: $verde; /* Safari */
+  color: #fff;
+}
+::-moz-selection {
+  background: $verde; /* Firefox */
+  color: #fff;
+}
+
+ng\:view {
+  display: block;
+  border: 1px solid red;
+}
+
+ng-include {
+  display: block;
+  border: 1px solid blue;
+}
+
+a {
+  &:hover,
+  &:active,
+  &:focus {
+    outline: 0;
+  }
+}
+
+.flag {
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../img/flags-s4c9c4f2348.png", sizingMethod="crop");
+  zoom: 1;
+}
+
+
+strong,
+b {
+  @extend %font-bold;
+}

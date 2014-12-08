@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]> <html lang="pt-br" class="no-js ie ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="pt-br" class="no-js ie ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="pt-br" class="no-js" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="main"> <!--<![endif]-->
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=9">
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+
+        <!--[if lt IE 9]>
+        <script src="/assets/js/libs/html5shiv.js"></script>
+        <![endif]-->
+
+        <!--[if lte IE 8]>
+          <script>
+            document.createElement('ng-include');
+            document.createElement('ng-pluralize');
+            document.createElement('ng-view');
+
+            // Optionally these for CSS
+            document.createElement('ng:include');
+            document.createElement('ng:pluralize');
+            document.createElement('ng:view');
+          </script>
+        <![endif]-->
+
+        <!--[if IE 8 ]> <link rel="stylesheet" href="/assets/css/ie/ie8.css" /> <![endif]-->
+        <!--[if IE ]> <link rel="stylesheet" href="/assets/css/ie/ie.css" /> <![endif]-->
+
+        <link rel="shortcut icon" href="">
+        <link rel="stylesheet" href="/frontend/dist/app/assets/css/stylesheet.css">
+    </head>
+
+    <body>
+        
+        <div id="all">
+            <!-- header -->
+            <header class="header">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-sm-2 cx1">
+                      <h1><a href="#" ng-click="">WebAPI</a></h1>
+                    </div>
+                  </div>          
+                </div>
+            </header>
+            <!-- / header -->
+            <div ng-view class="view"></div>
+        </div>
+
+        <!-- plugins -->
+        <script type="text/javascript" src="/frontend/app/assets/js/libs/angular.js"></script>
+
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.js"></script>
+
+        <!-- plugins -->
+        <script type="text/javascript" src="/frontend/app/assets/js/libs/plugins.js"></script>
+
+        <!-- application -->
+        <script type="text/javascript" src="/frontend/app/assets/js/application.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,15 @@
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\bin\Debug\Codvanced.Chat.exe
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\bin\Debug\Codvanced.Chat.pdb
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\MainWindow.baml
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\MainWindow.g.cs
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\App.g.cs
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\Codvanced.Chat_MarkupCompile.cache
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\Codvanced.Chat.g.resources
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\Codvanced.Chat.Properties.Resources.resources
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\Codvanced.Chat.csproj.GenerateResource.Cache
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\Codvanced.Chat.exe
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\Codvanced.Chat.pdb
+C:\DESENVOLVIMENTO\WUNDERMAN\SVN\VIVO\vivo-fibra-csharp\Codvanced.Chat\Codvanced.Chat\bin\Debug\Codvanced.Chat.exe.config
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\Codvanced.Chat\Codvanced.Chat\bin\Debug\Codvanced.Chat.exe.config
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\Codvanced.Chat.exe
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\Codvanced.Chat\Codvanced.Chat\obj\x86\Debug\Codvanced.Chat.pdb

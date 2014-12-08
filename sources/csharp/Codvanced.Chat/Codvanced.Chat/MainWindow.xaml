@@ -1,0 +1,12 @@
+﻿<Window x:Class="Codvanced.Chat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button Content="Send teste message" Height="31" HorizontalAlignment="Left" Margin="353,268,0,0" Name="button2" VerticalAlignment="Top" Width="114" />
+        <TextBox Height="219" HorizontalAlignment="Left" Margin="31,12,0,0" Name="txtMessage" VerticalAlignment="Top" Width="436" />
+        <TextBox Text="Hello, world!" Height="62" HorizontalAlignment="Left" Margin="31,237,0,0" Name="txtSendMessage" VerticalAlignment="Top" Width="316" KeyDown="txtSendMessage_KeyDown" />
+        <TextBox Text="127.0.0.1" Height="23" HorizontalAlignment="Left" Margin="353,237,0,0" Name="txtIP" VerticalAlignment="Top" Width="114" />
+        <Button Content="Button" Height="30" Margin="474,270,0,0" Name="button1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="13" Click="button1_Click" />
+    </Grid>
+</Window>

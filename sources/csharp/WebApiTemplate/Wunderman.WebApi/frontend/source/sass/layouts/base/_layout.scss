@@ -1,0 +1,40 @@
+.show-grid [class^=col-] {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #eee;
+	background-color: rgba(86,61,124,.15);
+	border: 1px solid #ddd;
+	border: 1px solid rgba(86,61,124,.2);
+}
+
+input[type=text], input[type=email], input[type=password] {
+	border-color: #CCC;
+}
+.content{
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.container-fluid{
+	max-width: 1175px;
+	padding: 0 10px;
+}
+
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+
+%font-bold {
+  font-weight: bold;
+}
+
+%font-normal {
+  font-weight: normal;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}

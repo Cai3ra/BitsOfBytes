@@ -1,0 +1,11 @@
+.header{
+
+	.h{height: 58px;}
+	background: #FFF;
+	border: 1px solid #CCC;
+	
+	.container-fluid{
+		@extend .h;
+		> .row, .row > div{ @extend .h;}
+	}
+}

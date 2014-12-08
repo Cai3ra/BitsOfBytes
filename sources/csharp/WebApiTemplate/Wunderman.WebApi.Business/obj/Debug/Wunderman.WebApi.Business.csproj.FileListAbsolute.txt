@@ -1,0 +1,14 @@
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\obj\Debug\Wunderman.WebApi.Business.csprojResolveAssemblyReference.cache
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Business.dll.config
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Business.dll
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Business.pdb
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\IOC.FW.dll
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Abstraction.dll
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.dll
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\EntityFramework.dll
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Abstraction.pdb
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.pdb
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\IOC.FW.xml
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\EntityFramework.xml
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\obj\Debug\Wunderman.WebApi.Business.dll
+C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\obj\Debug\Wunderman.WebApi.Business.pdb

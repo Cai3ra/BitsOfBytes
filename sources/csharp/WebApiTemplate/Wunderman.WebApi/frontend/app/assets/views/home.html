@@ -1,0 +1,89 @@
+<!-- content -->
+<div class="content container-fluid">
+  <!-- content-center -->
+  <div class="content-center">
+	
+	<p ng-show="status_show" class="alert alert-success" role="alert">{{status}}</p>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">Create and Editing Users</h3>
+		</div>
+		<div class="panel-body">
+	
+			<form action="" class="form-horizontal" novalidate>
+				<div class="form-group">
+					<label for="nameTxt" class="col-sm-2 control-label">Name</label>
+					<div class="col-sm-5">
+					    <input type="text" class="form-control" ng-model="cust.Name" id="nameTxt" value="" Required />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="inputAge" class="col-sm-2 control-label">Age</label>
+					<div class="col-sm-2">
+					  	<input type="number" class="form-control" id="ageTxt" ng-model="cust.Age" value="" />
+						<input type="hidden" class="form-control" id="ageTxt" ng-model="cust.Id" value="" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="userTxt" class="col-sm-2 control-label">User</label>
+					<div class="col-sm-2">
+					    <input type="text" class="form-control" ng-model="cust.User" id="userTxt" value="" Required />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="passwordTxt" class="col-sm-2 control-label">Password</label>
+					<div class="col-sm-2">
+					    <input type="password" class="form-control" ng-model="cust.Password" id="userTxt" value="" Required />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<div class="col-sm-offset-2">
+					  <button type="submit" class="btn btn-default" ng-click="insertCustomer(cust)">{{action}}</button>
+					  <button class="btn btn-default" ng-show="show_cancel" ng-click="cancelUpdate()">cancel</button>
+					</div>
+				</div>			
+			</form>					
+		</div>
+	</div>
+	
+	<p>Listing  {{customers.length}} user (s)</p>
+	
+	<table class="table table-condensed">
+		<colgroup>
+			<col width="70" />
+			<col />
+			<col width="200" />
+			<col width="70" />
+			<col width="140"/>
+		</colgroup>
+		<thead>
+	        <tr>
+	          <th>#</th>
+	          <th>Name</th>
+	          <th>User</th>
+	          <th>Age</th>
+	          <th>Actions</th>
+    	    </tr>
+      	</thead>
+  		<tbody class="table-striped">
+	        <tr ng-repeat="cust in customers">
+	          <td>{{cust.Id}}</td>
+	          <td>{{cust.Name}}</td>
+	          <td>{{cust.User}}</td>
+	          <td>{{cust.Age}}</td>
+	          <td>
+	          <a ng-click="insertCustomerInForm(cust.Id)" class="btn btn-small btn-primary">edit</a> | <a ng-click="deleteCustomer(cust.Id)" class="btn btn-small btn-danger">delete</a></td>
+	        </tr>
+      	</tbody>
+	</table>
+
+  </div>
+  <!-- / content-center -->
+
+</div>
+<!-- / content -->
