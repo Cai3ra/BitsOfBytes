@@ -12,3 +12,17 @@ C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.DAO\bin\Debug\EntityFramework.
 C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.DAO\bin\Debug\IOC.FW.xml
 C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.DAO\obj\Debug\Wunderman.WebApi.DAO.dll
 C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.DAO\obj\Debug\Wunderman.WebApi.DAO.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\Wunderman.WebApi.DAO.dll.config
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\Wunderman.WebApi.DAO.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\Wunderman.WebApi.DAO.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\EntityFramework.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\IOC.FW.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\Wunderman.WebApi.Abstraction.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\Wunderman.WebApi.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\Wunderman.WebApi.Abstraction.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\Wunderman.WebApi.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\EntityFramework.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\bin\Debug\IOC.FW.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\obj\Debug\Wunderman.WebApi.DAO.csprojResolveAssemblyReference.cache
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\obj\Debug\Wunderman.WebApi.DAO.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.DAO\obj\Debug\Wunderman.WebApi.DAO.pdb

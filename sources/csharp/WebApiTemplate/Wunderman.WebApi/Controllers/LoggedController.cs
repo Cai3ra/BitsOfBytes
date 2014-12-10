@@ -16,8 +16,8 @@ namespace Wunderman.WebApi.Web.Controllers
         {
 
         }
-        // GET api/<controller>
 
+        // GET api/<controller>
         public Task<HttpResponseMessage> Get()
         {
             var asyncTask = Task<HttpResponseMessage>.Factory.StartNew(

@@ -12,3 +12,17 @@ C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\IOC.FW.xml
 C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\bin\Debug\EntityFramework.xml
 C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\obj\Debug\Wunderman.WebApi.Business.dll
 C:\Projetos\DEV\restful\trunk\C#\Wunderman.WebApi.Business\obj\Debug\Wunderman.WebApi.Business.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Business.dll.config
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Business.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Business.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\IOC.FW.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Abstraction.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\EntityFramework.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.Abstraction.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\Wunderman.WebApi.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\IOC.FW.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\bin\Debug\EntityFramework.xml
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\obj\Debug\Wunderman.WebApi.Business.csprojResolveAssemblyReference.cache
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\obj\Debug\Wunderman.WebApi.Business.dll
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\WebApiTemplate\Wunderman.WebApi.Business\obj\Debug\Wunderman.WebApi.Business.pdb
