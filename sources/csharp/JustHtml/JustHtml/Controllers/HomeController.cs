@@ -16,21 +16,6 @@ namespace JustHtml.Controllers
 
         public ActionResult Index()
         {
-            DateTime dtNow = DateTime.Now;
-            var tokenClient = String.Concat("COL-Solidaria-API-Integration.", dtNow.ToString("yyyy-MM-dd.HH:mm"));
-            UTF8Encoding enc = new UTF8Encoding();
-
-            byte[] data = enc.GetBytes(tokenClient);
-            var result = BitConverter.ToString(
-                SHA1.Create().ComputeHash(data)
-            ).Replace("-", String.Empty);
-
-            string urlToCall = string.Format(
-                "?slug={0}&accessToken={1}&date={2}",
-                "lar-jesus-entre-as-criancas",
-                result,
-                dtNow.ToString("yyyyMMddHHmm")
-            );
             return View();
         }
 
