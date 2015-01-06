@@ -1,18 +1,19 @@
 (function() {
   'use strict';
-  require(["libs/jquery-1.11.1.min", "controllers/personcontroller", "models/person"], function() {
-    var bind, clean, controller, gridBind, insert, load, op, parse, remove, update;
+  require(["libs/jquery-1.11.1.min", "controllers/personcontroller", "models/person", "libs/jquery.uploadfile.min"], function() {
+    var bind, clean, controller, files, gridBind, insert, load, op, parse, remove, update;
     controller = new PersonController();
     op = "insert";
+    files = [];
     load = function() {
       return controller.load((function(_this) {
         return function(data) {
           var grid, line, person, _i, _len;
-          grid = $('.grid');
+          grid = $('.grid tbody');
           grid.empty();
           for (_i = 0, _len = data.length; _i < _len; _i++) {
             person = data[_i];
-            line = "<tr>" + ("<td class='id row'>" + person.ID + "</td>") + ("<td class='name row'>" + person.Name + "</td>") + ("<td class='age row'>" + person.Age + "</td>") + "<td class='row'><a href='#' class='edit'>edit</a></td>" + "<td class='row'><a href='#' class='delete'>delete</a></td>" + "</tr>";
+            line = "<tr>" + ("<td class='id row'>" + person.ID + "</td>") + ("<td class='name col-md-12 row'>" + person.Name + "</td>") + ("<td class='age row'>" + person.Age + "</td>") + "<td class='row'><a href='#' class='edit'>edit</a></td>" + "<td class='row'><a href='#' class='delete'>delete</a></td>" + "</tr>";
             grid.append(line);
           }
           return gridBind();
@@ -59,28 +60,30 @@
       data.find('input[name=Name]').val('');
       data.find('input[name=Age]').val('');
     };
-    bind = (function(_this) {
-      return function() {
-        var form;
-        form = $('form');
-        form.on('submit', function(e) {
-          e.preventDefault();
-          switch (op) {
-            case "insert":
-              (function() {
-                insert();
-                clean(form);
-              })();
-              break;
-            case "update":
-              (function() {
-                update();
-                clean(form);
-              })();
-          }
-        });
-      };
-    })(this);
+    bind = function() {
+      var form;
+      form = $('form');
+      form.on('submit', function(e) {
+        e.preventDefault();
+        switch (op) {
+          case "insert":
+            (function() {
+              insert();
+              clean(form);
+            })();
+            break;
+          case "update":
+            (function() {
+              update();
+              clean(form);
+            })();
+        }
+      });
+      $("#fileuploader").uploadFile({
+        url: "/Home/SendFile",
+        fileName: "file"
+      });
+    };
     gridBind = (function(_this) {
       return function() {
         var data;

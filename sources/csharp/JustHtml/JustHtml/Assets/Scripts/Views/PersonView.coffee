@@ -4,20 +4,22 @@ require(
 		"libs/jquery-1.11.1.min"
 		"controllers/personcontroller" 
 		"models/person"
+		"libs/jquery.uploadfile.min"
 	]
 	() -> 
 		controller = new PersonController()
 		op = "insert"
+		files = []
 
 		load = () ->
 			controller.load((data) => 
-				grid = $('.grid')
+				grid = $('.grid tbody')
 				grid.empty()
 				for person in data
 
 					line = "<tr>"+
 						"<td class='id row'>#{person.ID}</td>"+
-						"<td class='name row'>#{person.Name}</td>"+
+						"<td class='name col-md-12 row'>#{person.Name}</td>"+
 						"<td class='age row'>#{person.Age}</td>"+
 						"<td class='row'><a href='#' class='edit'>edit</a></td>"+
 						"<td class='row'><a href='#' class='delete'>delete</a></td>"+
@@ -29,7 +31,7 @@ require(
 		
 		insert = () ->
 			data = $('form')
-			person = parse(data)	
+			person = parse(data)
 
 			if data?
 				controller.insert(
@@ -76,7 +78,7 @@ require(
 			data.find('input[name=Age]').val('')
 			return
 
-		bind = () =>
+		bind = () ->
 			form = $('form')
 			form.on(
 				'submit'
@@ -93,6 +95,11 @@ require(
 							return
 					return
 			)
+
+			$("#fileuploader").uploadFile({
+				url:"/Home/SendFile",
+				fileName:"file"
+			})
 			return
 
 		gridBind = () =>

@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using JustHtml.Models;
 
 namespace JustHtml
 {
@@ -8,6 +9,7 @@ namespace JustHtml
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new AjaxCrawlableAttribute());
         }
     }
 }

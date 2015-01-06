@@ -13,6 +13,7 @@ class PersonController
 					return
 			error: (error) ->
 				console.log (error)
+
 				return
 		})
 		return
@@ -30,7 +31,7 @@ class PersonController
 		})
 		return
 
-	edit: (person, cb) ->
+	edit: (person, cb) -> 
 		$.ajax({ 
 			url: "/api/Person/#{person.ID}"
 			dataType: "json"
@@ -70,4 +71,19 @@ class PersonController
 			error: (error) ->	
 		})
 		return
-		
+
+	file: (cb, f) ->
+		$.ajax({ 
+			url: "/Home/SendFile"
+			dataType: "json"
+			type: "POST"
+			data: { file: f }
+			processData: false
+			contentType: false
+			cache: false	
+			success: (data, error) ->
+				cb(data)
+				return
+			error: (error) ->	
+		})
+		return

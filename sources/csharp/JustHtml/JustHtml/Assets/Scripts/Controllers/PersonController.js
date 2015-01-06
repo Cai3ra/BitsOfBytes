@@ -75,6 +75,24 @@ PersonController = (function() {
     });
   };
 
+  PersonController.prototype.file = function(cb, f) {
+    $.ajax({
+      url: "/Home/SendFile",
+      dataType: "json",
+      type: "POST",
+      data: {
+        file: f
+      },
+      processData: false,
+      contentType: false,
+      cache: false,
+      success: function(data, error) {
+        cb(data);
+      },
+      error: function(error) {}
+    });
+  };
+
   return PersonController;
 
 })();

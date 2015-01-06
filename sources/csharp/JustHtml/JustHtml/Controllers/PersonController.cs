@@ -46,6 +46,8 @@ namespace JustHtml.Controllers
         // POST api/<controller>
         public void Post([FromBody]Person value)
         {
+            int maxId = this._referencedList.Max(p => p.ID);
+            value.ID = ++maxId;
             this._referencedList.Add(value);
         }
 
@@ -59,6 +61,8 @@ namespace JustHtml.Controllers
 
                 if (indexToUpdate > -1)
                 {
+                    int tempId = this._referencedList[indexToUpdate].ID;
+                    value.ID = tempId;
                     this._referencedList[indexToUpdate] = value;
                 }
             }
