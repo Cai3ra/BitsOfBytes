@@ -1,10 +1,19 @@
 'use strict'
+
+require.config({
+	baseUrl: '/assets/scripts/'
+	paths: {
+		'jquery': 'libs/jquery-1.11.1.min'
+		'jquery.uploadfile': 'libs/jquery.uploadfile.min'
+	}
+});
+
 require( 
 	[	
-		"libs/jquery-1.11.1.min"
+		"jquery"
 		"controllers/personcontroller" 
 		"models/person"
-		"libs/jquery.uploadfile.min"
+		"jquery.uploadfile"
 	]
 	() -> 
 		controller = new PersonController()
@@ -96,10 +105,14 @@ require(
 					return
 			)
 
-			$("#fileuploader").uploadFile({
-				url:"/Home/SendFile",
-				fileName:"file"
-			})
+			$(document).ready( 
+				() -> 
+					$("#fileuploader").uploadFile({
+						url:"/Home/SendFile"
+						fileName:"file"
+					})
+					return
+			)
 			return
 
 		gridBind = () =>

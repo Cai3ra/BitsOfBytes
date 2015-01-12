@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="libs/peer.js"></script>
+</head>
+<body>
+	<div>
+		<input type="text" value="000000000" id="myid"/><br>
+		<input type="text" value="your id here" id="peerid"/>
+		<button onclick="connect()">CONNECT</button>
+		<br>
+		<input type="text" value="your text here" id="text"/>
+		<button onclick="send()">SEND</button>
+	</div>
+	<script>
+		var peer = new Peer({key: 'lwjd5qra8257b9'});
+		var connSender;
+		var peerId;
+		
+		peer.on('open', function(id) {
+			var myid = document.querySelector('#myid').value = id;
+		});
+		
+		peer.on('connection', function(conn) {
+			connSender = connSender || conn;
+			peerId = conn.peer;
+			conn.on('data', function(data) {
+				document.querySelector('#peerid').value = peerId;
+				var nodeText = document.createTextNode(data + ' from: ' + peerId);
+				var lf = document.createElement('br');
+				document.body.appendChild(nodeText);
+				document.body.appendChild(lf);
+			});
+		});
+		
+		function connect(){
+			connSender = peer.connect(document.querySelector('#peerid').value);
+			connSender.on('open', function() {
+				connSender.on('data', function(data) {
+					document.querySelector('#peerid').value = connSender.peer;
+					var nodeText = document.createTextNode(data + ' from: ' + connSender.peer);
+					var lf = document.createElement('br');
+					document.body.appendChild(nodeText);
+					document.body.appendChild(lf);
+				});
+			});
+		}
+		
+		function send(){
+			connSender.send(document.querySelector('#text').value);
+		}
+	</script>
+</body>
+</html>

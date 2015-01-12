@@ -1,6 +1,14 @@
 (function() {
   'use strict';
-  require(["libs/jquery-1.11.1.min", "controllers/personcontroller", "models/person", "libs/jquery.uploadfile.min"], function() {
+  require.config({
+    baseUrl: '/assets/scripts/',
+    paths: {
+      'jquery': 'libs/jquery-1.11.1.min',
+      'jquery.uploadfile': 'libs/jquery.uploadfile.min'
+    }
+  });
+
+  require(["jquery", "controllers/personcontroller", "models/person", "jquery.uploadfile"], function() {
     var bind, clean, controller, files, gridBind, insert, load, op, parse, remove, update;
     controller = new PersonController();
     op = "insert";
@@ -79,9 +87,11 @@
             })();
         }
       });
-      $("#fileuploader").uploadFile({
-        url: "/Home/SendFile",
-        fileName: "file"
+      $(document).ready(function() {
+        $("#fileuploader").uploadFile({
+          url: "/Home/SendFile",
+          fileName: "file"
+        });
       });
     };
     gridBind = (function(_this) {
