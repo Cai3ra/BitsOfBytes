@@ -23,7 +23,7 @@ class QuakeParser:
 
             if line.find('InitGame:') > -1:
                 game_index += 1
-                gamin = dict(game_index=game_index, players=dict(), kills=dict(), total_kills=0)
+                gamin = dict(game_index=game_index, players=dict(),  total_kills=0)
                 game.append(gamin)
 
             elif temp_connect_player > -1:
@@ -65,9 +65,31 @@ class QuakeParser:
                 kills_count += 1
                 gamin['total_kills'] += 1
 
+
+        test = {
+            "game_1": {
+                "total_kills": 1,
+                "players": ["1", "2", "3"],
+                "kills": {
+                    "1": 5,
+                    "2": 5,
+                    "3": 5
+                }
+            }
+        }
+
+
+        test123 = dict()
+        test123["game_1"] = dict(
+            total_kills=1,
+            players=["1", "2", "3"],
+            kills=dict([("A", 1), ("B", 1), ("C", 1)])
+        )
+
         print('close file')
         file.close()
         print(len(game))
+        print(game)
 
     if __name__ == '__main__':
         parse()

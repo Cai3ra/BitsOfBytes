@@ -13,7 +13,6 @@ class PersonController
 					return
 			error: (error) ->
 				console.log (error)
-
 				return
 		})
 		return
