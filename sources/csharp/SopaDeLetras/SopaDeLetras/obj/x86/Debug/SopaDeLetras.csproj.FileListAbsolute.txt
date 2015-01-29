@@ -1,0 +1,6 @@
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\SopaDeLetras\SopaDeLetras\bin\Debug\Exercicio\dicio.txt
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\SopaDeLetras\SopaDeLetras\bin\Debug\Exercicio\sopa.txt
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\SopaDeLetras\SopaDeLetras\bin\Debug\SopaDeLetras.exe
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\SopaDeLetras\SopaDeLetras\bin\Debug\SopaDeLetras.pdb
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\SopaDeLetras\SopaDeLetras\obj\x86\Debug\SopaDeLetras.exe
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\SopaDeLetras\SopaDeLetras\obj\x86\Debug\SopaDeLetras.pdb
