@@ -60,3 +60,4 @@ C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\source
 C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\JustHtml\JustHtml\obj\Debug\JustHtml.pdb
 C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\JustHtml\JustHtml\bin\snapshot\phantomjs.exe
 C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\JustHtml\JustHtml\bin\snapshot\seo\createSnapshot.js
+C:\DESENVOLVIMENTO\PESSOAL\ESTUDOS\PROGRAMACAO\VERSIONADO\GIT\BitsOfBytes\sources\csharp\JustHtml\JustHtml\bin\snapshot\transform\rasterize.js
