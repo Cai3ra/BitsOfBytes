@@ -28,21 +28,23 @@ GameProtocol = (function() {
     })(this));
     this.socket.on('data', (function(_this) {
       return function(chunk) {
-        var e, encryptedChunk;
+        var decryptedData, e, encryptedChunk, reply;
         encryptedChunk = '';
         try {
           if (chunk.length > 300) {
+            chunk = (chunk.toString('utf-8')).trim();
             console.log("received " + chunk + "\n*********************************");
-            encryptedChunk = _this.criptoAnalyzer.decrypt(chunk.toString());
-            console.log(encryptedChunk);
+            decryptedData = _this.criptoAnalyzer.decrypt(chunk);
+            console.log(decryptedData);
+            reply = _this.criptoAnalyzer.encrypt("i've received " + decryptedData);
+            return _this.socket.write(reply);
           } else {
-            _this.criptoAnalyzer.test(chunk);
+            return _this.criptoAnalyzer.test(chunk);
           }
         } catch (_error) {
           e = _error;
-          console.log(e);
+          return console.log(e);
         }
-        return _this.socket.write(encryptedChunk || _this.criptoAnalyzer.encrypt(123));
       };
     })(this));
     this.socket.on('end', socket.end);

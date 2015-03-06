@@ -14,7 +14,7 @@ class DependencyResolver
 	load: (dependencyName, dependencyPath) ->
 		@logger.message """
 		loading #{dependencyName}...
-		"""
+		""".grey
 		try
 			if dependencyPath.indexOf('\\') > -1 or dependencyPath.indexOf('/') > -1
 				dependencyPath = path.join "#{do process.cwd}", "#{dependencyPath}"
@@ -23,10 +23,10 @@ class DependencyResolver
 
 			@logger.message """
 			* #{dependencyName} loaded ...
-			"""
+			""".green
 		catch e
 			@logger.error "critical error loading #{dependencyName} \r\n error: #{e}\ 
-			*********************************", e
+			\r\n*********************************".red, e
 		dependency
 
 module.exports = DependencyResolver

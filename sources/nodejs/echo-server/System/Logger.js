@@ -12,7 +12,7 @@ Logger = (function() {
   };
 
   Logger.prototype.error = function(message, exception) {
-    return this.output(message);
+    return this.output(message.red);
   };
 
   Logger.prototype.warning = function(message) {};

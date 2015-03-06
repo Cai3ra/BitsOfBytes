@@ -12,16 +12,16 @@ DependencyResolver = (function() {
 
   DependencyResolver.prototype.load = function(dependencyName, dependencyPath) {
     var dependency, e;
-    this.logger.message("loading " + dependencyName + "...");
+    this.logger.message(("loading " + dependencyName + "...").grey);
     try {
       if (dependencyPath.indexOf('\\') > -1 || dependencyPath.indexOf('/') > -1) {
         dependencyPath = path.join("" + (process.cwd()), "" + dependencyPath);
       }
       dependency = require(dependencyPath);
-      this.logger.message("* " + dependencyName + " loaded ...");
+      this.logger.message(("* " + dependencyName + " loaded ...").green);
     } catch (_error) {
       e = _error;
-      this.logger.error("critical error loading " + dependencyName + " \r\n error: " + e + "*********************************", e);
+      this.logger.error(("critical error loading " + dependencyName + " \r\n error: " + e + "\r\n*********************************").red, e);
     }
     return dependency;
   };

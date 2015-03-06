@@ -6,10 +6,11 @@ class Constants
 		@PORT = 1337
 		@HOST = '127.0.0.1'
 		@ERRORS = ['EADDRINUSE','ECONNRESET','EADDRINUSE','EADDRINUSE']
-		@VERSION = "1.0.0.0"
+		@VERSION = "1.0.0.1"
 
 global.constants = new Constants
 
+#
 # Version 1.0.0.1:
 #	- Second release, with:
 #		* encrypt/decrypt messages

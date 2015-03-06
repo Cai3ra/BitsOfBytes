@@ -9,6 +9,7 @@
 #********************************************************************************#
 
 # ************** loading necessary resources to start ********
+colors = require 'colors'
 DependencyResolver = require './System/DependencyResolver'
 Logger = require './System/Logger'
 log = new Logger
@@ -25,6 +26,6 @@ global.resolver.load 'Constants', 'System/Constants'
 do ->
     server = net.createServer (socket) ->
         protocol = new GameProtocol server, socket
-        console.log 'new client connected'
+        console.log 'new client connected'.green
     log.message "\r\nserver version #{global.constants.VERSION} listening on port: #{global.constants.PORT}\r\n"
     server.listen global.constants.PORT, global.constants.HOST

@@ -6,7 +6,7 @@ class Logger
 	message: (message) ->
 		@output message
 	error: (message, exception) ->
-		@output message
+		@output message.red
 	warning: (message) ->
 
 module.exports = Logger

@@ -18,15 +18,17 @@ class GameProtocol
             
             try
                 if chunk.length > 300
+                    chunk = do (chunk.toString 'utf-8').trim
                     console.log """received #{chunk}
                     *********************************"""
-                    encryptedChunk = @criptoAnalyzer.decrypt do chunk.toString
-                    console.log encryptedChunk
+                    decryptedData = @criptoAnalyzer.decrypt chunk
+                    console.log decryptedData
+                    reply = @criptoAnalyzer.encrypt "i've received #{decryptedData}"
+                    @socket.write reply
                 else
                     @criptoAnalyzer.test chunk
             catch e
                 console.log e  
-            @socket.write encryptedChunk or @criptoAnalyzer.encrypt 123 
         @socket.on 'end', socket.end
 
 module.exports = GameProtocol;
