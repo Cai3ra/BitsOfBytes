@@ -38,7 +38,7 @@ SecurityProtocol = (function() {
       if (decryptedData != null) {
         isValid = isValidSignature(decryptedData);
         if ((isValid != null) && isValid) {
-          console.log(isValid);
+          global.log.info(isValid);
           return true;
         }
       }
@@ -47,14 +47,14 @@ SecurityProtocol = (function() {
   };
 
   SecurityProtocol.prototype.test = function(text) {
-    console.log('Before encrypt:');
-    console.log(text.toString());
+    global.log.info('Before encrypt:');
+    global.log.info(text.toString());
     text = this.encrypt(text);
-    console.log('Now encrypted:');
-    console.log(text);
+    global.log.info('Now encrypted:');
+    global.log.info(text);
     text = this.decrypt(text);
-    console.log('Decrypted:');
-    return console.log(text);
+    global.log.info('Decrypted:');
+    return global.log.info(text);
   };
 
   return SecurityProtocol;

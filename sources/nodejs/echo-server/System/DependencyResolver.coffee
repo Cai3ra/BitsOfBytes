@@ -3,30 +3,29 @@ path = require 'path'
 
 class DependencyResolver
 	constructor: (@logger) ->
-		@logger.message """
-		Have been initialized the general dependency resolver... 
-		Use this tool for general and custom dependency purposes and all your actions will be logged
+		@logger.help """
+		The dependency resolver was initialized...
+		Use this tool for include general and custom dependencies
 		Thanks and good coding!!!
-
-		starting to resolve dependencies...
+		Starting to resolve dependencies...
 		-----------------------------------
 		"""
 	load: (dependencyName, dependencyPath) ->
-		@logger.message """
+		@logger.data """
 		loading #{dependencyName}...
-		""".grey
+		"""
 		try
 			if dependencyPath.indexOf('\\') > -1 or dependencyPath.indexOf('/') > -1
 				dependencyPath = path.join "#{do process.cwd}", "#{dependencyPath}"
 			
 			dependency = require dependencyPath
 
-			@logger.message """
+			@logger.info """
 			* #{dependencyName} loaded ...
-			""".green
+			"""
 		catch e
 			@logger.error "critical error loading #{dependencyName} \r\n error: #{e}\ 
-			\r\n*********************************".red, e
+			\r\n*********************************", e
 		dependency
 
 module.exports = DependencyResolver

@@ -8,7 +8,7 @@ Constants = (function() {
     this.PORT = 1337;
     this.HOST = '127.0.0.1';
     this.ERRORS = ['EADDRINUSE', 'ECONNRESET', 'EADDRINUSE', 'EADDRINUSE'];
-    this.VERSION = "1.0.0.1";
+    this.VERSION = "1.0.0.2";
   }
 
   return Constants;

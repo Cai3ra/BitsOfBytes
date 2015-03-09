@@ -7,11 +7,11 @@ class GameProtocol
 
         @socket.on 'error', (e) =>
             if e.code in global.constants.ERRORS
-                console.log "error handled: #{e}"
+                global.log.error "error handled: #{e}"
 
         @server.on 'error', (e) =>
             if e.code in global.constants.ERRORS
-                console.log "error handled: #{e}"
+                global.log.error "error handled: #{e}"
 
         @socket.on 'data', (chunk) =>
             encryptedChunk = ''
@@ -19,17 +19,19 @@ class GameProtocol
             try
                 if chunk.length > 300
                     chunk = do (chunk.toString 'utf-8').trim
-                    console.log """received #{chunk}
+                    global.log.data """received #{chunk}
                     *********************************"""
                     decryptedData = @criptoAnalyzer.decrypt chunk
-                    console.log decryptedData
+                    global.log.info "replying: #{decryptedData}"
                     reply = @criptoAnalyzer.encrypt "i've received #{decryptedData}"
                     @socket.write reply
                 else
                     @criptoAnalyzer.test chunk
             catch e
-                console.log e  
-        @socket.on 'end', socket.end
+                global.log.error do e.toString, e  
+        @socket.on 'end', ->
+            global.log.warning "client signed out"
+            do socket.end
 
 module.exports = GameProtocol;
 

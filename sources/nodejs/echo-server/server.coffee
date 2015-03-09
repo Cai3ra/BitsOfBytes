@@ -8,14 +8,13 @@
 # openssl rsa -in certs/server/my-server.key.pem -pubout -out certs/client/my-server.pub 
 #********************************************************************************#
 
+Mongo = require './Model/MongoConnector'
 # ************** loading necessary resources to start ********
-colors = require 'colors'
 DependencyResolver = require './System/DependencyResolver'
 Logger = require './System/Logger'
-log = new Logger
-resolver = new DependencyResolver log
-global.resolver = resolver;
 # ************** /loading necessary resources to start ********
+
+global.resolver = new DependencyResolver global.log = new Logger
 
 # ************** loading resources using dependency resolver ********
 net = global.resolver.load 'net', 'net'
@@ -25,7 +24,8 @@ global.resolver.load 'Constants', 'System/Constants'
 	
 do ->
     server = net.createServer (socket) ->
+        global.log.info 'new client connected'
         protocol = new GameProtocol server, socket
-        console.log 'new client connected'.green
-    log.message "\r\nserver version #{global.constants.VERSION} listening on port: #{global.constants.PORT}\r\n"
+    global.log.info "\r\nserver version #{global.constants.VERSION} listening on port: #{global.constants.PORT}\r\n"
     server.listen global.constants.PORT, global.constants.HOST
+    mng = new Mongo

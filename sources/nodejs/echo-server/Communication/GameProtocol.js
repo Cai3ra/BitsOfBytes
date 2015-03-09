@@ -14,7 +14,7 @@ GameProtocol = (function() {
       return function(e) {
         var _ref;
         if (_ref = e.code, __indexOf.call(global.constants.ERRORS, _ref) >= 0) {
-          return console.log("error handled: " + e);
+          return global.log.error("error handled: " + e);
         }
       };
     })(this));
@@ -22,7 +22,7 @@ GameProtocol = (function() {
       return function(e) {
         var _ref;
         if (_ref = e.code, __indexOf.call(global.constants.ERRORS, _ref) >= 0) {
-          return console.log("error handled: " + e);
+          return global.log.error("error handled: " + e);
         }
       };
     })(this));
@@ -33,9 +33,9 @@ GameProtocol = (function() {
         try {
           if (chunk.length > 300) {
             chunk = (chunk.toString('utf-8')).trim();
-            console.log("received " + chunk + "\n*********************************");
+            global.log.data("received " + chunk + "\n*********************************");
             decryptedData = _this.criptoAnalyzer.decrypt(chunk);
-            console.log(decryptedData);
+            global.log.info("replying: " + decryptedData);
             reply = _this.criptoAnalyzer.encrypt("i've received " + decryptedData);
             return _this.socket.write(reply);
           } else {
@@ -43,11 +43,14 @@ GameProtocol = (function() {
           }
         } catch (_error) {
           e = _error;
-          return console.log(e);
+          return global.log.error(e.toString(), e);
         }
       };
     })(this));
-    this.socket.on('end', socket.end);
+    this.socket.on('end', function() {
+      global.log.warning("client signed out");
+      return socket.end();
+    });
   }
 
   return GameProtocol;

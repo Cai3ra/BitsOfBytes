@@ -7,21 +7,21 @@ path = require('path');
 DependencyResolver = (function() {
   function DependencyResolver(logger) {
     this.logger = logger;
-    this.logger.message("Have been initialized the general dependency resolver... \nUse this tool for general and custom dependency purposes and all your actions will be logged\nThanks and good coding!!!\n\nstarting to resolve dependencies...\n-----------------------------------");
+    this.logger.help("The dependency resolver was initialized...\nUse this tool for include general and custom dependencies\nThanks and good coding!!!\nStarting to resolve dependencies...\n-----------------------------------");
   }
 
   DependencyResolver.prototype.load = function(dependencyName, dependencyPath) {
     var dependency, e;
-    this.logger.message(("loading " + dependencyName + "...").grey);
+    this.logger.data("loading " + dependencyName + "...");
     try {
       if (dependencyPath.indexOf('\\') > -1 || dependencyPath.indexOf('/') > -1) {
         dependencyPath = path.join("" + (process.cwd()), "" + dependencyPath);
       }
       dependency = require(dependencyPath);
-      this.logger.message(("* " + dependencyName + " loaded ...").green);
+      this.logger.info("* " + dependencyName + " loaded ...");
     } catch (_error) {
       e = _error;
-      this.logger.error(("critical error loading " + dependencyName + " \r\n error: " + e + "\r\n*********************************").red, e);
+      this.logger.error("critical error loading " + dependencyName + " \r\n error: " + e + "\r\n*********************************", e);
     }
     return dependency;
   };

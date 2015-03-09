@@ -24,19 +24,19 @@ class SecurityProtocol
             if decryptedData?
                 isValid = isValidSignature decryptedData
                 if isValid? and isValid
-                    console.log isValid
+                    global.log.info isValid
                     return yes
         no        
     test: (text) ->
-        console.log 'Before encrypt:'
-        console.log do text.toString
+        global.log.info 'Before encrypt:'
+        global.log.info do text.toString
         
         text = @encrypt text
-        console.log 'Now encrypted:'
-        console.log text
+        global.log.info 'Now encrypted:'
+        global.log.info text
 
         text = @decrypt text
-        console.log 'Decrypted:'
-        console.log text
+        global.log.info 'Decrypted:'
+        global.log.info text
 
 module.exports = SecurityProtocol
