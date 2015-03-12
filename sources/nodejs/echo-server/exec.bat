@@ -1,3 +1,4 @@
 @echo off
 cls
-node ./server.js
+start mongod --config mongo.config
+start node ./Server.js
