@@ -1,0 +1,16 @@
+{
+  "name": "preload",
+  "version": "1.0.0",
+  "description": "tests for preloading video assets",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
