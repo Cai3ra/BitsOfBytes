@@ -19,7 +19,8 @@ VideoLoader = (function() {
         id: ++index,
         url: url,
         progress: 0,
-        loaded: false
+        loaded: false,
+        cacheUrl: null
       });
     }
     this.progressCallback = null;
@@ -27,14 +28,12 @@ VideoLoader = (function() {
   }
 
   VideoLoader.prototype.loadEvent = function(evt, item, callback) {
-    var myBlob, totalLoaded, vid, video, videoElement, _i, _len, _ref;
+    var myBlob, totalLoaded, vid, video, _i, _len, _ref;
     if (evt.target.status === 200) {
       myBlob = evt.target.response;
       vid = (window.URL ? window.URL : webkitURL).createObjectURL(myBlob);
-      videoElement = document.createElement("video");
-      videoElement.width = 640;
-      videoElement.height = 480;
       item.loaded = true;
+      item.cacheUrl = vid;
       totalLoaded = 0;
       _ref = this.loader;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -43,9 +42,6 @@ VideoLoader = (function() {
           totalLoaded++;
         }
       }
-      videoElement.src = vid;
-      document.body.appendChild(videoElement);
-      videoElement.play();
       if (this.finishCallback != null) {
         this.finishCallback(item);
       }
@@ -66,10 +62,9 @@ VideoLoader = (function() {
         video = _ref[_i];
         percentual += video.progress;
       }
-      if (this.useDecimalPrecision) {
-        percentual = (percentual * 100) / this.loader.length;
-      } else {
-        percentual = Math.ceil((percentual * 100) / this.loader.length);
+      percentual = (percentual * 100) / this.loader.length;
+      if (!this.useDecimalPrecision) {
+        percentual = Math.ceil(percentual);
       }
       if (percentual !== this.loaded) {
         this.loaded = percentual;

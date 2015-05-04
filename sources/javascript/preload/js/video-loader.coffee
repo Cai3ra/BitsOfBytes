@@ -9,6 +9,7 @@ class VideoLoader
 				url: url
 				progress: 0
 				loaded: no
+				cacheUrl: null
 		@progressCallback = null
 		@finishCallback = null
 
@@ -17,20 +18,20 @@ class VideoLoader
 			myBlob = evt.target.response
 			vid = (if window.URL then window.URL else webkitURL).createObjectURL myBlob
 			
-			videoElement = document.createElement "video"	
-			videoElement.width = 640
-			videoElement.height = 480
-			
 			item.loaded = yes
+			item.cacheUrl = vid
 
 			totalLoaded = 0
 			for video in @loader
 				if video.progress is 1
 					totalLoaded++
 
-			videoElement.src = vid
-			document.body.appendChild videoElement
-			do videoElement.play
+			#videoElement = document.createElement "video"	
+			#videoElement.width = 640
+			#videoElement.height = 480					
+			#videoElement.src = vid
+			#document.body.appendChild videoElement
+			#do videoElement.play
 
 			if @finishCallback?
 				@finishCallback item
@@ -47,10 +48,9 @@ class VideoLoader
 			for video in @loader
 				 percentual += video.progress
 
-			if @useDecimalPrecision
-				percentual = (percentual * 100) / @loader.length
-			else
-				percentual = Math.ceil (percentual * 100) / @loader.length
+			percentual = (percentual * 100) / @loader.length
+			if not @useDecimalPrecision
+				percentual = Math.ceil percentual
 
 			if percentual != @loaded
 				@loaded = percentual
@@ -72,6 +72,7 @@ class VideoLoader
 				@progress video,
 				false
 			)
+	
 			do xhr.send
 
 	load: (video, callback) => (evt) =>
